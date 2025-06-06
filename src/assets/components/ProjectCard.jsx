@@ -15,7 +15,7 @@ function ProjectCard({ project }) {
       variants={projectCardVariants} // Terapkan variants di sini
     >
       <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.2)" className="bg-[#1D042F] rounded-2xl">
-        <img src={project.imageSrc} className="md:p-8 p-6 pb-6 w-full h-auto rounded-xl object-cover" alt={project.title} />
+        <img src={project.imageSrc} className="md:p-8 p-6 pb-6 w-full h-auto rounded-[20px] object-cover" alt={project.title} />
         <h1 className="text-purple-500 font-bold md:text-3xl text-2xl md:px-8 px-6">{project.title}</h1>
         <p className="text-gray-200 text-sm pt-3 md:px-8 px-6">{project.description}</p>
         <p className="text-purple-700 text-sm pt-4 font-bold md:px-8 px-6">{project.date}</p>

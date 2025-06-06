@@ -5,7 +5,7 @@ import GradientCircle from '../GradientCircle';
 
 const headingVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.3, ease: 'easeOut' } },
 };
 
 // Variants untuk container kartu proyek agar ada stagger effect
@@ -14,8 +14,8 @@ const projectsGridVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Jeda 0.2 detik antar setiap kartu
-      delayChildren: 0.3, // Delay 0.3 detik sebelum kartu pertama muncul
+      staggerChildren: 0.5, // Jeda 0.2 detik antar setiap kartu
+      delayChildren: 0.9, // Delay 0.3 detik sebelum kartu pertama muncul
     },
   },
 };
@@ -79,7 +79,7 @@ function ProjectsSection() {
           colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
           opacity={0.3}
           blur="blur-3xl"
-          className="absolute top-[-10rem] right-[-4rem]" // Posisikan di luar layar sedikit
+          className="absolute top-[-10rem] md:right-[-4rem] right-[-15rem]" // Posisikan di luar layar sedikit
           animationDuration={10}
         />
       </div>

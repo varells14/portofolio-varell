@@ -86,15 +86,15 @@ function TechStackSection() {
           ))}
           <p></p>
         </div>
-        <GradientCircle
-          size="w-[420px] h-[520px]" // Ukuran lebih besar lagi
-          colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
-          opacity={0.3}
-          blur="blur-3xl"
-          className="absolute top-[-3rem] left-[-14rem]" // Posisikan di luar layar sedikit
-          animationDuration={10}
-        />
       </div>
+      <GradientCircle
+        size="w-[420px] h-[520px]" // Ukuran lebih besar lagi
+        colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
+        opacity={0.3}
+        blur="blur-3xl"
+        className="absolute top-[-3rem] left-[-14rem]" // Posisikan di luar layar sedikit
+        animationDuration={10}
+      />
     </motion.section>
   );
 }
