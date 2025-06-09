@@ -33,14 +33,14 @@ const resources = {
 };
 
 i18n
-  .use(LanguageDetector) // Mendeteksi bahasa dari browser/user
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
     ns: ['about', 'navbar', 'hero', 'projects', 'education-experience'],
     interpolation: {
-      escapeValue: false, // React sudah auto-escape
+      escapeValue: false,
     },
   });
 

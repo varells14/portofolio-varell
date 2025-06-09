@@ -36,7 +36,7 @@ const EducationExperienceSection = () => {
       <motion.div className="max-w-6xl mx-auto" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
         {/* Pendidikan */}
         <div className="mb-20">
-          <motion.h3 className="text-4xl md:text-5xl font-bold text-purple-500 mb-10 text-center md:text-left" variants={subHeadingVariants}>
+          <motion.h3 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left animated-gradient-text" variants={subHeadingVariants}>
             {t('educationTitle')}
           </motion.h3>
           <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1">
@@ -48,7 +48,7 @@ const EducationExperienceSection = () => {
 
         {/* Pengalaman */}
         <div className="mb-20">
-          <motion.h3 className="text-4xl md:text-5xl font-bold text-purple-500 mb-10 text-center md:text-left" variants={subHeadingVariants}>
+          <motion.h3 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left animated-gradient-text" variants={subHeadingVariants}>
             {t('experienceTitle')}
           </motion.h3>
           <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1">
