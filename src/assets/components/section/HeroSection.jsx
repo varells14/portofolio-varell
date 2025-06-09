@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'; // Import motion
 import Magnet from '../Magnet';
 import TiltedCard from '../TiltedCard';
 import GradientCircle from '../GradientCircle';
+import { FiSend } from 'react-icons/fi';
 
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -57,9 +58,9 @@ function HeroSection() {
             imageSrc="./images/iam.jpeg"
             altText="My Foto"
             captionText="Ichramsyah"
-            containerHeight="320px"
-            containerWidth="320px"
-            imageHeight="320px"
+            containerHeight="390px"
+            containerWidth="390px"
+            imageHeight="350px"
             imageWidth="320px"
             rotateAmplitude={18}
             scaleOnHover={1.2}
@@ -67,10 +68,22 @@ function HeroSection() {
             showTooltip={true}
             displayOverlayContent={true}
             overlayContent={
-              <div className=" bg-gradient-to-r from-purple-600 to-purple-800 rounded-sm py-1 px-3">
-                <p className="text-white font-bold font-poppins">Photo</p>
-                <div className="absolute w-full left-32 top-35 ">
-                  <p className="text-white italic">Hover me</p>
+              <div className="relative w-full h-full">
+                <div className="flex items-center bg-white w-[20rem] justify-between rounded-t-xl py-2 pl-3 pr-5">
+                  <div className="flex items-center">
+                    <img src="/images/ig-profile.JPG" className="rounded-full w-7 h-7" alt="" />
+                    <a href="https://instagram.com/ichramabdr" target="_blank" className="font-bold text-[14px] pl-2">
+                      Ichramabdr
+                    </a>
+                  </div>
+                  <i className="fas fa-ellipsis-v"></i>
+                </div>
+                <div className="absolute top-[20rem] bg-white rounded-b-xl w-[20rem]">
+                  <div className="py-2 px-3 flex item-center gap-3">
+                    <i className="far fa-heart hover:text-red-500 text-[18px]"></i>
+                    <i className="far fa-comment hover:text-gray-500 text-[18px]"></i>
+                    <FiSend className="hover:text-yellow-500" size={18} />
+                  </div>
                 </div>
               </div>
             }

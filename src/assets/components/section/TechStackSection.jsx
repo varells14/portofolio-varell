@@ -94,7 +94,7 @@ function TechStackSection() {
         colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
         opacity={0.3}
         blur="blur-3xl"
-        className="absolute top-[-3rem] left-[-14rem]" // Posisikan di luar layar sedikit
+        className="absolute top-[-3rem] left-[10rem]" // Posisikan di luar layar sedikit
         animationDuration={10}
       />
     </motion.section>

@@ -15,7 +15,7 @@ const GradientCircle = ({
       style={{
         background: `radial-gradient(circle at center, ${colors.join(', ')})`,
         opacity: opacity,
-        // backgroundSize: '200% 200%', // Opsional: Jika ingin menggeser gradien di dalam lingkaran
+        backgroundSize: '200% 200%', // Opsional: Jika ingin menggeser gradien di dalam lingkaran
       }}
       // Animasi subtle:
       // scale: Membuat lingkaran sedikit membesar dan mengecil (efek 'bernapas')
