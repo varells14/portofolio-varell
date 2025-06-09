@@ -1,10 +1,12 @@
-import ScrollProgressBar from './assets/components/ScrollProgressBar';
+import ScrollProgressBar from './assets/components/ui/ScrollProgressBar';
 import './App.css';
-import HeroSection from './assets/components/section/HeroSection';
-import Background from './assets/components/BackGround';
-import TechStackSection from './assets/components/section/TechStackSection';
-import ProjectsSection from './assets/components/section/ProjectsSection';
-import FloatingNavbar from './assets/components/FloatingNavbar';
+import HeroSection from './assets/components/sections/Hero/HeroSection';
+import Background from './assets/components/ui/BackGround';
+import TechStackSection from './assets/components/sections/Tech/TechStackSection';
+import ProjectsSection from './assets/components/sections/Projects/ProjectsSection';
+import FloatingNavbar from './assets/components/ui/FloatingNavbar';
+import AboutSection from './assets/components/sections/About/AboutSection';
+import EducationExperienceSection from './assets/components/sections/EducationExperience/EducationExperienceSection';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <div className="relative min-h-screen overflow-hidden">
         <Background />
         <HeroSection />
+        <AboutSection />
+        <EducationExperienceSection />
         <TechStackSection />
         <ProjectsSection />
       </div>

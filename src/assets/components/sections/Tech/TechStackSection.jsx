@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import GradientBackground from '../GradientBackground';
-import GradientCircle from '../GradientCircle';
+import GradientBackground from '../../visuals/GradientBackground';
+import GradientCircle from '../../visuals/GradientCircle';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -50,6 +50,7 @@ function TechStackSection() {
   return (
     // Membungkus seluruh section dengan motion.section untuk animasi on-scroll
     <motion.section
+      id="tech"
       className="relative z-10 lg:px-20 md:px-16 px-10 py-15"
       variants={sectionVariants} // Gunakan variants yang didefinisikan
       initial="hidden" // Mulai dari state 'hidden'

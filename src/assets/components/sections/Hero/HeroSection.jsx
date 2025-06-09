@@ -1,10 +1,11 @@
 // src/components/HeroSection.jsx
 import React from 'react';
 import { motion } from 'framer-motion'; // Import motion
-import Magnet from '../Magnet';
-import TiltedCard from '../TiltedCard';
-import GradientCircle from '../GradientCircle';
+import Magnet from '../../visuals/Magnet';
+import TiltedCard from '../../visuals/TiltedCard';
+import GradientCircle from '../../visuals/GradientCircle';
 import { FiSend } from 'react-icons/fi';
+import { useTranslation } from 'react-i18next';
 
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -30,12 +31,14 @@ const staggerContainerVariants = {
 };
 
 function HeroSection() {
+  const { t } = useTranslation('hero');
+
   return (
-    <div className="relative z-10 lg:px-20 md:px-16 px-10 py-20">
-      <section className="flex flex-wrap-reverse md:flex-nowrap w-full">
+    <section id="home" className="relative z-10 lg:px-20 md:px-16 px-10 py-20">
+      <div className="flex flex-wrap-reverse md:flex-nowrap w-full">
         <motion.div className="md:w-1/2 w-full md:pt-0 pt-10 font-poppins" variants={staggerContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
           <motion.p className="md:text-[40px] text-[25px] text-gray-300 font-bold" variants={fadeInUpVariants}>
-            I am Ichram
+            {t('greet')}
           </motion.p>
           <motion.h1 className="md:text-[75px] text-[55px] text-purple-700 leading-[90px] font-bold animated-gradient-text" variants={fadeInUpVariants}>
             FullStack Web
@@ -44,7 +47,7 @@ function HeroSection() {
             Developer
           </motion.h1>
           <motion.p className="text-gray-200 pt-7 pr-5 text-[20px] pb-10" variants={fadeInUpVariants}>
-            With creativity and deep analysis, I solve user experience challenges, creating solutions that connect people worldwide with integrity.
+            {t('paragraph')}
           </motion.p>
           <Magnet disabled={false}>
             <motion.a href="#" className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white" variants={fadeInUpVariants}>
@@ -89,7 +92,7 @@ function HeroSection() {
             }
           />
         </motion.div>
-      </section>
+      </div>
       <GradientCircle
         size="w-[600px] h-[600px]" // Ukuran lebih besar lagi
         colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
@@ -98,7 +101,7 @@ function HeroSection() {
         className="absolute top-[-17rem] right-[-17rem]" // Posisikan di luar layar sedikit
         animationDuration={10}
       />
-    </div>
+    </section>
   );
 }
 

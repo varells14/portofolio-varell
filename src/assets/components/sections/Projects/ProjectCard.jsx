@@ -1,7 +1,7 @@
 // src/components/ProjectCard.jsx
 import React from 'react';
 import { motion } from 'framer-motion'; // Untuk animasi Framer Motion
-import SpotlightCard from './SpotlightCard';
+import SpotlightCard from '../../visuals/SpotlightCard';
 
 // Variants untuk animasi kartu proyek
 const projectCardVariants = {

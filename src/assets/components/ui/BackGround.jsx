@@ -1,4 +1,4 @@
-import Squares from './Squares';
+import Squares from '../visuals/Squares';
 
 function Background() {
   return (

@@ -1,0 +1,4 @@
+{
+  "title": "About Me",
+  "paragraph": "I’m Ichramsyah Abdurrachman, a Computer Engineering student at Paramadina University and aspiring Fullstack Developer. I build scalable, user-friendly web apps using React, Laravel, Node.js, Express.js, MySQL, Tailwind CSS, and Bootstrap. I’ve developed a social platform for Indonesian film lovers using Laravel and deployed it via cPanel. My code follows clean architecture patterns like MVC and Repository Pattern for maintainability and performance. I also explore Python for machine learning, such as keyword prediction for tech articles on DOAJ.org."
+}
