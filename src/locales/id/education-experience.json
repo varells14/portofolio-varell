@@ -1,0 +1,38 @@
+{
+  "educationTitle": "Pendidikan",
+  "experienceTitle": "Pengalaman",
+  "skillsTitle": "Keahlian",
+  "education": [
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo_Universitas_Paramadna.png/1200px-Logo_Universitas_Paramadna.png",
+      "institution": "Universitas Paramadina",
+      "degree": "S.Kom, Teknik Informatika",
+      "period": "September 2022 - Sekarang",
+      "description": "Fokus pada pengembangan perangkat lunak, algoritma, dan sistem informasi."
+    },
+    {
+      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
+      "institution": "MAN 1 Bogor",
+      "degree": "Ilmu Pengetahuan Alam",
+      "period": "2019 - 2022",
+      "description": "Fokus pada studi ilmiah termasuk matematika dan fisika."
+    }
+  ],
+  "experience": [
+    {
+      "logo": "./images/company-logo-1.png",
+      "company": "PT. Teknologi Maju Bersama",
+      "position": "Frontend Developer Intern",
+      "period": "Juni 2024 - Agustus 2024",
+      "responsibilities": ["Mengembangkan dan memelihara UI menggunakan React.js dan Tailwind CSS.", "Berpartisipasi dalam code review dan debugging.", "Berkolaborasi dengan tim backend untuk integrasi REST API."]
+    },
+    {
+      "logo": "./images/company-logo-2.png",
+      "company": "Freelance Web Designer",
+      "position": "Pekerja Lepas",
+      "period": "Januari 2023 - Sekarang",
+      "responsibilities": ["Merancang situs web responsif untuk klien UMKM.", "Mengelola proyek dari konsep awal hingga peluncuran."]
+    }
+  ],
+  "skills": ["Pemecahan Masalah", "Kerja Tim", "Komunikasi", "Adaptasi", "Dasar Manajemen Proyek", "Prinsip UI/UX", "Clean Code", "Debugging"]
+}

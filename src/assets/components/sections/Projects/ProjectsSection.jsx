@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'; // Import useState dan useEf
 import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
 import ProjectCard from './ProjectCard';
 import GradientCircle from '../../visuals/GradientCircle';
+import { useTranslation } from 'react-i18next';
 
 // Variasi animasi untuk judul section
 const headingVariants = {
@@ -32,53 +33,40 @@ const categoryButtonVariants = {
 };
 
 function ProjectsSection() {
+  const { t } = useTranslation('projects');
+
   // State untuk menyimpan kategori yang sedang aktif. Defaultnya 'all'
   const [activeCategory, setActiveCategory] = useState('all');
 
   // **PENTING: Pastikan setiap proyek memiliki properti 'category'**
   const allProjects = [
     {
+      id: 'rinema', // gunanya jadi key untuk i18n
       imageSrc: './images/project1.png',
-      title: 'Rinema Web App',
-      description: 'Digital platform dedicated to celebrating and exploring Indonesian cinema. Designed to build a passionate community of film lovers',
       date: 'February 2025',
       techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
       githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
       liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
-      category: 'application', // <-- Pastikan ini ada dan stringnya konsisten
+      category: 'application',
     },
     {
-      imageSrc: './images/project2.png', // Ganti dengan gambar yang berbeda untuk visualisasi
-      title: 'Rebuild Film Page Rinema (Frontend)',
-      description: 'Rebuild the film details page for Rinema using modern frontend technologies.',
+      id: 'filmPage',
+      imageSrc: './images/project2.png',
       date: 'April 2025',
       techIcons: ['./images/react.png', './images/tailwind.png'],
       githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
       liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
-      category: 'application', // <-- Pastikan ini ada dan stringnya konsisten
+      category: 'application',
     },
     {
-      imageSrc: './images/design-project.png', // Contoh gambar proyek non-aplikasi
-      title: 'Branding & UI/UX Design for Local Cafe',
-      description: 'Designed logo, branding guidelines, and user interface for a local coffee shop mobile app.',
+      id: 'cafeDesign',
+      imageSrc: './images/design-project.png',
       date: 'March 2024',
       techIcons: ['./images/figma.png', './images/adobe illustrator.png'],
-      githubLink: '', // Kosongkan jika tidak ada
-      liveSiteLink: '', // Kosongkan jika tidak ada
-      category: 'other', // <-- Pastikan ini ada dan stringnya konsisten
-    },
-    {
-      imageSrc: './images/graphic-project.png', // Contoh proyek non-aplikasi lainnya
-      title: 'Illustrative Poster Series',
-      description: 'A series of digital illustrations focusing on abstract concepts and vibrant color palettes.',
-      date: 'January 2024',
-      techIcons: ['./images/adobe illustrator.png'],
       githubLink: '',
       liveSiteLink: '',
-      category: 'other', // <-- Pastikan ini ada dan stringnya konsisten
+      category: 'other',
     },
-    // **Tambahkan semua proyek Anda di sini, dan pastikan setiap proyek memiliki properti 'category'.**
-    // **Nilai 'category' haruslah 'application' atau 'other' atau kategori baru yang Anda definisikan.**
   ];
 
   // Fungsi untuk mengelola klik kategori
@@ -116,12 +104,12 @@ function ProjectsSection() {
           className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-4"
           variants={headingVariants} // Animasi untuk judul "Projects"
         >
-          Projects
+          {t('title')}
         </motion.h1>
         <motion.div
           variants={headingVariants} // Animasi untuk paragraf deskripsi
         >
-          <p className="text-[20px] text-gray-100 mb-8 max-w-2xl mx-auto">Our skills enable us to transform your ideas into an inspiring web project.</p>
+          <p className="text-[20px] text-gray-100 mb-8 max-w-2xl mx-auto"> {t('description')} </p>
 
           {/* --- Tombol Kategori --- */}
           <motion.div className="flex flex-wrap justify-center gap-4 mb-12" variants={categoryButtonVariants}>
@@ -130,21 +118,21 @@ function ProjectsSection() {
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
                 ${activeCategory === 'all' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
             >
-              All Projects
+              {t('categories.all')}
             </button>
             <button
               onClick={() => handleCategoryClick('application')}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
                 ${activeCategory === 'application' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
             >
-              Applications
+              {t('categories.application')}
             </button>
             <button
               onClick={() => handleCategoryClick('other')}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
                 ${activeCategory === 'other' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
             >
-              Other Projects
+              {t('categories.other')}
             </button>
           </motion.div>
         </motion.div>
@@ -168,7 +156,14 @@ function ProjectsSection() {
                 filteredProjects.map((project, index) => (
                   // Gunakan key yang unik dan stabil. project.title lebih baik dari index.
                   // Jika project.title tidak unik, tambahkan id unik ke setiap proyek.
-                  <ProjectCard key={project.title} project={project} />
+                  <ProjectCard
+                    key={project.id}
+                    project={{
+                      ...project,
+                      title: t(`projects_content.${project.id}.title`),
+                      description: t(`projects_content.${project.id}.description`),
+                    }}
+                  />
                 ))
               ) : (
                 <motion.p

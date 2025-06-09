@@ -1,0 +1,38 @@
+{
+  "educationTitle": "Education",
+  "experienceTitle": "Experience",
+  "skillsTitle": "Skills",
+  "education": [
+    {
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo_Universitas_Paramadna.png/1200px-Logo_Universitas_Paramadna.png",
+      "institution": "Paramadina University",
+      "degree": "B.CompSc, Informatics Engineering",
+      "period": "September 2022 - Present",
+      "description": "Focused on software development, algorithms, and information systems."
+    },
+    {
+      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
+      "institution": "MAN 1 Bogor",
+      "degree": "Science",
+      "period": "2019 - 2022",
+      "description": "Focused on scientific studies including math and physics."
+    }
+  ],
+  "experience": [
+    {
+      "logo": "./images/company-logo-1.png",
+      "company": "PT. Teknologi Maju Bersama",
+      "position": "Frontend Developer Intern",
+      "period": "June 2024 - August 2024",
+      "responsibilities": ["Developing and maintaining UI using React.js and Tailwind CSS.", "Participated in code review and debugging.", "Collaborated with backend team for REST API integration."]
+    },
+    {
+      "logo": "./images/company-logo-2.png",
+      "company": "Freelance Web Designer",
+      "position": "Self-Employed",
+      "period": "January 2023 - Present",
+      "responsibilities": ["Designing responsive websites for small business clients.", "Managed projects from concept to launch."]
+    }
+  ],
+  "skills": ["Problem Solving", "Teamwork", "Communication", "Adaptability", "Project Management Basics", "UI/UX Principles", "Clean Code", "Debugging"]
+}

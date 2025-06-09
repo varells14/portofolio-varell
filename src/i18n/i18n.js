@@ -10,14 +10,25 @@ import idAbout from '../locales/id/about.json';
 import enHero from '../locales/en/hero.json';
 import idHero from '../locales/id/hero.json';
 
+//  Project
+import enProjects from '../locales/en/projects.json';
+import idProjects from '../locales/id/projects.json';
+
+import enEducationExperience from '../locales/en/education-experience.json';
+import idEducationExperience from '../locales/id/education-experience.json';
+
 const resources = {
   en: {
     about: enAbout,
     hero: enHero,
+    projects: enProjects,
+    'education-experience': enEducationExperience,
   },
   id: {
     about: idAbout,
     hero: idHero,
+    projects: idProjects,
+    'education-experience': idEducationExperience,
   },
 };
 
@@ -27,7 +38,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    ns: ['about', 'navbar', 'hero'],
+    ns: ['about', 'navbar', 'hero', 'projects', 'education-experience'],
     interpolation: {
       escapeValue: false, // React sudah auto-escape
     },
