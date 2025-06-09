@@ -32,8 +32,8 @@ const EducationExperienceSection = () => {
   const skills = t('skills', { returnObjects: true });
 
   return (
-    <section id="education-experience-skills" className="relative z-10 px-10 md:px-16 lg:px-20 py-20 text-white font-poppins">
-      <motion.div className="max-w-6xl mx-auto" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+    <section id="education-experience-skills" className="relative z-10 px-10 md:px-16 lg:px-20 py-10 text-white font-poppins">
+      <motion.div className="max-w-6xl mx-auto" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
         {/* Pendidikan */}
         <div className="mb-20">
           <motion.h3 className="text-4xl md:text-5xl font-bold text-purple-500 mb-10 text-center md:text-left" variants={subHeadingVariants}>

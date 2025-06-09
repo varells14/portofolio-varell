@@ -26,7 +26,7 @@ const textVariants = {
 const AboutSection = () => {
   const { t } = useTranslation('about');
   return (
-    <section id="about" className="relative z-10 lg:px-20 md:px-16 px-10 py-20 text-white font-poppins">
+    <section id="about" className="relative z-10 lg:px-20 md:px-16 px-10 py-15 text-white font-poppins">
       <motion.div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
         <motion.div className=" w-full text-center ">
           <motion.h2 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-6" variants={textVariants}>
