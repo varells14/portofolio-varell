@@ -57,10 +57,10 @@ const FloatingNavbar = () => {
         animate={controls}
         transition={{ type: 'spring', stiffness: 120, damping: 20 }}
         className="fixed top-4 left-1/2 -translate-x-1/2 z-50
-                   w-[26rem] max-w-xl mx-auto
-                   bg-tranparent bg-opacity-10 backdrop-blur-md
-                   rounded-full shadow-lg p-3 flex md:pr-0 pr-6 items-center justify-end md:justify-center
-                   border border-white border-opacity-20"
+                  md:w-[26rem] w-[90%] max-w-xl mx-auto 
+                  bg-tranparent bg-opacity-10 backdrop-blur-md
+                  rounded-full shadow-lg p-3 flex md:pr-0 pr-6 items-center justify-end md:justify-center
+                  border border-white border-opacity-20"
       >
         {/* Navigasi Desktop */}
         <ul className="hidden md:flex space-x-6 text-white font-medium">
