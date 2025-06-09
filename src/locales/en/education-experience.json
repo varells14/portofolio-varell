@@ -20,14 +20,14 @@
   ],
   "experience": [
     {
-      "logo": "./images/company-logo-1.png",
+      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
       "company": "PT. Teknologi Maju Bersama",
       "position": "Frontend Developer Intern",
       "period": "June 2024 - August 2024",
       "responsibilities": ["Developing and maintaining UI using React.js and Tailwind CSS.", "Participated in code review and debugging.", "Collaborated with backend team for REST API integration."]
     },
     {
-      "logo": "./images/company-logo-2.png",
+      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
       "company": "Freelance Web Designer",
       "position": "Self-Employed",
       "period": "January 2023 - Present",
