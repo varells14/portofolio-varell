@@ -20,18 +20,16 @@
   ],
   "experience": [
     {
-      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
-      "company": "PT. Teknologi Maju Bersama",
-      "position": "Frontend Developer Intern",
-      "period": "June 2024 - August 2024",
-      "responsibilities": ["Developing and maintaining UI using React.js and Tailwind CSS.", "Participated in code review and debugging.", "Collaborated with backend team for REST API integration."]
-    },
-    {
-      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
-      "company": "Freelance Web Designer",
-      "position": "Self-Employed",
-      "period": "January 2023 - Present",
-      "responsibilities": ["Designing responsive websites for small business clients.", "Managed projects from concept to launch."]
+      "logo": "https://www.carlogos.org/logo/Hino-symbol-1440x900.png",
+      "company": "Head Office PT. Hino Motor Sales Indonesia",
+      "position": "IT Change Management",
+      "period": "July 2023 - November 2023",
+      "responsibilities": [
+        "Collaborated with technical teams to translate complex IT concepts into easy-to-understand visual content",
+        "Created visual documentation and communication assets (flyers, animation videos, PPT) to support IT Change Management initiatives.",
+        "Ensured all communication materials aligned with corporate branding and IT governance standards.",
+        "Utilized tools such as Canva, Adobe Illustrator, and PowerPoint to create compelling and informative visuals."
+      ]
     }
   ],
   "skills": ["Problem Solving", "Teamwork", "Communication", "Adaptability", "Project Management Basics", "UI/UX Principles", "Clean Code", "Debugging"]

@@ -20,18 +20,16 @@
   ],
   "experience": [
     {
-      "logo": "./images/company-logo-1.png",
-      "company": "PT. Teknologi Maju Bersama",
-      "position": "Frontend Developer Intern",
-      "period": "Juni 2024 - Agustus 2024",
-      "responsibilities": ["Mengembangkan dan memelihara UI menggunakan React.js dan Tailwind CSS.", "Berpartisipasi dalam code review dan debugging.", "Berkolaborasi dengan tim backend untuk integrasi REST API."]
-    },
-    {
-      "logo": "./images/company-logo-2.png",
-      "company": "Freelance Web Designer",
-      "position": "Pekerja Lepas",
-      "period": "Januari 2023 - Sekarang",
-      "responsibilities": ["Merancang situs web responsif untuk klien UMKM.", "Mengelola proyek dari konsep awal hingga peluncuran."]
+      "logo": "https://www.carlogos.org/logo/Hino-symbol-1440x900.png",
+      "company": "Head Office PT. Hino Motor Sales Indonesia",
+      "position": "IT Change Management",
+      "period": "Juli 2023 - November 2023",
+      "responsibilities": [
+        "Bekerja sama dengan tim teknis untuk menerjemahkan konsep IT yang kompleks menjadi konten visual yang mudah dipahami.",
+        "Membuat dokumentasi visual dan materi komunikasi (seperti flyer, video animasi, dan presentasi) untuk mendukung inisiatif IT Change Management.",
+        "Memastikan semua materi komunikasi sesuai dengan standar branding perusahaan dan tata kelola IT.",
+        "Menggunakan tools seperti Canva, Adobe Illustrator, dan PowerPoint untuk membuat visual yang menarik dan informatif."
+      ]
     }
   ],
   "skills": ["Pemecahan Masalah", "Kerja Tim", "Komunikasi", "Adaptasi", "Dasar Manajemen Proyek", "Prinsip UI/UX", "Clean Code", "Debugging"]
