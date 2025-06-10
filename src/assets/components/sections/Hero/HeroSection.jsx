@@ -35,9 +35,9 @@ function HeroSection() {
   const { t } = useTranslation('hero');
 
   return (
-    <section id="home" className="relative z-10 lg:px-20 md:px-16 px-10 py-20">
+    <section id="home" className="relative z-10 lg:px-20 md:px-16 px-10 py-20 pt-25">
       {/* --- KONTAINER PEMBATAS DITAMBAHKAN DI SINI --- */}
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="flex flex-wrap-reverse md:flex-nowrap w-full">
           {/* Konten kolom kiri (teks) */}
           <motion.div className="md:w-1/2 w-full md:pt-0 pt-10 font-poppins" variants={staggerContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>

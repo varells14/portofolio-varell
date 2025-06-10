@@ -1,28 +1,26 @@
 // src/components/section/ProjectsSection.jsx
-'use client'; // Penting untuk Next.js App Router
+'use client';
 
-import React, { useState, useEffect } from 'react'; // Import useState dan useEffect
-import { motion, AnimatePresence } from 'framer-motion'; // Import AnimatePresence
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
-// Variasi animasi untuk judul section
+// ... (kode varian animasi Anda tidak perlu diubah)
 const headingVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 1.3, ease: 'easeOut' } },
 };
 
-// Variants untuk container kartu proyek agar ada stagger effect
-// Disesuaikan agar lebih cepat saat kategori berubah, karena ini akan dipicu ulang
 const projectsGridVariants = {
-  hidden: { opacity: 0, y: 20 }, // Sedikit efek y saat muncul
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      staggerChildren: 0.15, // Jeda antar kartu sedikit lebih cepat
-      delayChildren: 0.1, // Delay sebelum kartu pertama muncul sedikit lebih cepat
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
     },
   },
 };
@@ -34,14 +32,11 @@ const categoryButtonVariants = {
 
 function ProjectsSection() {
   const { t } = useTranslation('projects');
-
-  // State untuk menyimpan kategori yang sedang aktif. Defaultnya 'all'
   const [activeCategory, setActiveCategory] = useState('all');
 
-  // **PENTING: Pastikan setiap proyek memiliki properti 'category'**
   const allProjects = [
     {
-      id: 'rinema', // gunanya jadi key untuk i18n
+      id: 'rinema',
       imageSrc: './images/project1.png',
       date: 'February 2025',
       techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
@@ -69,49 +64,21 @@ function ProjectsSection() {
     },
   ];
 
-  // Fungsi untuk mengelola klik kategori
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
-    console.log(`Kategori diubah menjadi: ${category}`); // Debug: Konfirmasi perubahan kategori
   };
 
-  // Filter proyek berdasarkan kategori aktif
-  const filteredProjects =
-    activeCategory === 'all'
-      ? allProjects
-      : allProjects.filter((project) => {
-          // Debug: Cek apakah kategori proyek cocok dengan kategori aktif
-          // console.log(`Proyek "${project.title}" (${project.category}) vs Aktif (${activeCategory}): ${project.category === activeCategory}`);
-          return project.category === activeCategory;
-        });
-
-  // Debug: Cek jumlah proyek yang difilter
-  useEffect(() => {
-    console.log('Proyek yang difilter:', filteredProjects);
-    console.log('Jumlah proyek yang difilter:', filteredProjects.length);
-  }, [filteredProjects]); // Efek ini berjalan setiap kali filteredProjects berubah
+  const filteredProjects = activeCategory === 'all' ? allProjects : allProjects.filter((project) => project.category === activeCategory);
 
   return (
-    <motion.section
-      id="projects"
-      className="relative z-10 lg:px-20 md:px-16 px-10 py-15"
-      initial="hidden" // State awal untuk seluruh section
-      whileInView="visible" // Animasikan saat masuk viewport
-      viewport={{ once: true, amount: 0.2 }} // Trigger sekali saat 20% terlihat
-    >
-      <div className="font-poppins text-center">
-        <motion.h1
-          className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-4"
-          variants={headingVariants} // Animasi untuk judul "Projects"
-        >
+    <motion.section id="projects" className="relative z-10 lg:px-20 md:px-16 px-10 py-15" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      <div className="max-w-7xl mx-auto font-poppins text-center">
+        <motion.h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-4" variants={headingVariants}>
           {t('title')}
         </motion.h1>
-        <motion.div
-          variants={headingVariants} // Animasi untuk paragraf deskripsi
-        >
+        <motion.div variants={headingVariants}>
           <p className="text-[20px] text-gray-100 mb-8 max-w-2xl mx-auto"> {t('description')} </p>
 
-          {/* --- Tombol Kategori --- */}
           <motion.div className="flex flex-wrap justify-center gap-4 mb-12" variants={categoryButtonVariants}>
             <button
               onClick={() => handleCategoryClick('all')}
@@ -137,25 +104,12 @@ function ProjectsSection() {
           </motion.div>
         </motion.div>
 
-        {/* --- Grid Proyek --- */}
         <AnimatePresence mode="wait">
-          {' '}
-          {/* Gunakan AnimatePresence dengan mode="wait" */}
-          <motion.div
-            key={activeCategory} // **Ini sangat penting untuk merestart animasi stagger**
-            className="flex flex-wrap justify-center"
-            variants={projectsGridVariants}
-            initial="hidden" // Selalu mulai dari hidden saat key berubah
-            animate="visible" // Animasikan ke visible
-            exit="hidden" // Animasikan ke hidden saat keluar
-          >
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-8 pt-5">
-              {' '}
-              {/* Tambah gap-8 dan sesuaikan pt-5 */}
+          <motion.div key={activeCategory} className="flex flex-wrap justify-center" variants={projectsGridVariants} initial="hidden" animate="visible" exit="hidden">
+            {/* --- KODE GRID SUDAH DIUBAH DI SINI --- */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5">
               {filteredProjects.length > 0 ? (
-                filteredProjects.map((project, index) => (
-                  // Gunakan key yang unik dan stabil. project.title lebih baik dari index.
-                  // Jika project.title tidak unik, tambahkan id unik ke setiap proyek.
+                filteredProjects.map((project) => (
                   <ProjectCard
                     key={project.id}
                     project={{
@@ -166,13 +120,7 @@ function ProjectsSection() {
                   />
                 ))
               ) : (
-                <motion.p
-                  key="no-projects-message" // Key unik untuk pesan ini
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="text-gray-400 text-lg col-span-full py-10" // Tambah py-10 untuk jarak
-                >
+                <motion.p key="no-projects-message" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-gray-400 text-lg col-span-full py-10">
                   No projects found in this category.
                 </motion.p>
               )}
