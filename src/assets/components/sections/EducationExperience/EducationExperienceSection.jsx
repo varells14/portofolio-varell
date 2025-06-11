@@ -6,6 +6,7 @@ import EducationItem from './EducationItem';
 import ExperienceItem from './ExperienceItem';
 import SkillItem from './SkillItem';
 import { useTranslation } from 'react-i18next';
+import GradientCircle from '../../visuals/GradientCircle';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -45,6 +46,7 @@ const EducationExperienceSection = () => {
             ))}
           </div>
         </div>
+        <GradientCircle size="w-[390px] h-[700px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-0 right-[-15rem]" animationDuration={10} />
 
         {/* Pengalaman */}
         <div className="mb-20">
@@ -69,6 +71,14 @@ const EducationExperienceSection = () => {
             ))}
           </div>
         </div>
+        <GradientCircle
+          size="w-[390px] h-[580px]" // Ukuran lebih besar lagi
+          colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
+          opacity={0.3}
+          blur="blur-3xl"
+          className="absolute bottom-0 left-[15rem]" // Posisikan di luar layar sedikit
+          animationDuration={10}
+        />
       </motion.div>
     </section>
   );

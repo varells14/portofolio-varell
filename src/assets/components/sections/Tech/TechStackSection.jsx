@@ -91,7 +91,7 @@ function TechStackSection() {
         </div>
       </div>
       <GradientCircle
-        size="w-[300px] h-[700px]" // Ukuran lebih besar lagi
+        size="w-[390px] h-[700px]" // Ukuran lebih besar lagi
         colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
         opacity={0.3}
         blur="blur-3xl"
