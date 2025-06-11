@@ -45,7 +45,7 @@ function HeroSection() {
               {t('greet')}
             </motion.p>
             <motion.h1 className="md:text-[75px] text-[55px] text-purple-700 leading-[90px] font-bold animated-gradient-text" variants={fadeInUpVariants}>
-              FullStack Web
+              Syelamat siang
             </motion.h1>
             <motion.h1 className="md:text-[75px] text-[55px] text-purple-700 leading-[90px] font-bold animated-gradient-text" variants={fadeInUpVariants}>
               Developer
