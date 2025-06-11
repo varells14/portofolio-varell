@@ -1,10 +1,11 @@
 {
   "title": "Projects",
-  "description": "Our skills enable us to transform your ideas into an inspiring web project.",
+  "description": "A collection of selected projects demonstrating my skills in software engineering.",
   "categories": {
     "all": "All Projects",
-    "application": "Applications",
-    "other": "Other Projects"
+    "fullstack": "Fullstack",
+    "frontend": "Frontend",
+    "backend": "Backend"
   },
   "no_project": "No projects found in this category.",
   "projects_content": {
@@ -13,12 +14,8 @@
       "description": "Digital platform dedicated to celebrating and exploring Indonesian cinema. Designed to build a passionate community of film lovers."
     },
     "filmPage": {
-      "title": "Rebuild Film Page Rinema (Frontend)",
+      "title": "Rebuild Film Page Rinema",
       "description": "Rebuild the film details page for Rinema using modern frontend technologies."
-    },
-    "cafeDesign": {
-      "title": "Branding & UI/UX Design for Local Cafe",
-      "description": "Designed logo, branding guidelines, and user interface for a local coffee shop mobile app."
     }
   }
 }

@@ -1,10 +1,11 @@
 {
   "title": "Proyek",
-  "description": "Kemampuan kami memungkinkan untuk mengubah ide Anda menjadi proyek web yang menginspirasi.",
+  "description": "Kumpulan proyek pilihan yang mendemonstrasikan kemampuan saya dalam rekayasa perangkat lunak.",
   "categories": {
     "all": "Semua Proyek",
-    "application": "Aplikasi",
-    "other": "Proyek Lainnya"
+    "fullstack": "Fullstack",
+    "frontend": "Frontend",
+    "backend": "Backend"
   },
   "no_project": "Tidak ada proyek dalam kategori ini.",
   "projects_content": {
@@ -13,12 +14,8 @@
       "description": "Platform digital untuk merayakan dan mengeksplorasi perfilman Indonesia. Dirancang untuk membangun komunitas pecinta film."
     },
     "filmPage": {
-      "title": "Bangun Ulang Halaman Film Rinema (Frontend)",
+      "title": "Bangun Ulang Halaman Film Rinema",
       "description": "Membangun ulang halaman detail film Rinema menggunakan teknologi frontend modern."
-    },
-    "cafeDesign": {
-      "title": "Desain Branding & UI/UX untuk Kafe Lokal",
-      "description": "Mendesain logo, panduan merek, dan antarmuka pengguna untuk aplikasi kafe lokal."
     }
   }
 }

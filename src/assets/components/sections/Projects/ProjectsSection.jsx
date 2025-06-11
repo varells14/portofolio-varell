@@ -37,30 +37,21 @@ function ProjectsSection() {
   const allProjects = [
     {
       id: 'rinema',
-      imageSrc: './images/project1.png',
+      imageSrc: './images/project1.webp',
       date: 'February 2025',
       techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
       githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
       liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
-      category: 'application',
+      category: 'fullstack',
     },
     {
       id: 'filmPage',
-      imageSrc: './images/project2.png',
+      imageSrc: './images/project2.webp',
       date: 'April 2025',
-      techIcons: ['./images/react.png', './images/tailwind.png'],
+      techIcons: ['./images/react.png', './images/tailwind.png', './images/javascript.png'],
       githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
       liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
-      category: 'application',
-    },
-    {
-      id: 'cafeDesign',
-      imageSrc: './images/design-project.png',
-      date: 'March 2024',
-      techIcons: ['./images/figma.png', './images/adobe illustrator.png'],
-      githubLink: '',
-      liveSiteLink: '',
-      category: 'other',
+      category: 'frontend',
     },
   ];
 
@@ -88,25 +79,31 @@ function ProjectsSection() {
               {t('categories.all')}
             </button>
             <button
-              onClick={() => handleCategoryClick('application')}
+              onClick={() => handleCategoryClick('fullstack')}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'application' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
+                ${activeCategory === 'fullstack' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
             >
-              {t('categories.application')}
+              {t('categories.fullstack')}
             </button>
             <button
-              onClick={() => handleCategoryClick('other')}
+              onClick={() => handleCategoryClick('frontend')}
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'other' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
+                ${activeCategory === 'frontend' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
             >
-              {t('categories.other')}
+              {t('categories.frontend')}
+            </button>
+            <button
+              onClick={() => handleCategoryClick('backend')}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
+                ${activeCategory === 'backend' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
+            >
+              {t('categories.backend')}
             </button>
           </motion.div>
         </motion.div>
 
         <AnimatePresence mode="wait">
           <motion.div key={activeCategory} className="flex flex-wrap justify-center" variants={projectsGridVariants} initial="hidden" animate="visible" exit="hidden">
-            {/* --- KODE GRID SUDAH DIUBAH DI SINI --- */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5">
               {filteredProjects.length > 0 ? (
                 filteredProjects.map((project) => (
