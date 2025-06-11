@@ -129,7 +129,7 @@ function ProjectsSection() {
         </AnimatePresence>
       </div>
 
-      <GradientCircle size="w-[520px] h-[520px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-[-10rem] md:right-[-4rem] right-[-15rem]" animationDuration={10} />
+      <GradientCircle size="w-[520px] h-[520px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-[-10rem] right-[-10rem]" animationDuration={10} />
     </motion.section>
   );
 }

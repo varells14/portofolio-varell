@@ -76,7 +76,7 @@ const EducationExperienceSection = () => {
           colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
           opacity={0.3}
           blur="blur-3xl"
-          className="absolute bottom-0 left-[15rem]" // Posisikan di luar layar sedikit
+          className="absolute bottom-[5rem] left-[15rem]" // Posisikan di luar layar sedikit
           animationDuration={10}
         />
       </motion.div>
