@@ -75,7 +75,7 @@ Jika Anda ingin menjalankan proyek ini di lingkungan lokal Anda, ikuti langkah-l
 **1. Clone Repositori**
 
 ```bash
-git clone [https://github.com/ichramsyah/portfolio-landingpage-style.git](https://github.com/ichramsyah/portfolio-landingpage-style.git)
+git clone https://github.com/ichramsyah/portfolio-landingpage-style.git
 ```
 
 **2. Masuk ke Direktori Proyek**
