@@ -15,7 +15,7 @@
     },
     "filmPage": {
       "title": "Rebuild Film Page Rinema",
-      "description": "Rebuild the film details page for Rinema using modern frontend technologies."
+      "description": "Rebuild the film details page for Rinema using modern frontend technologies with Rinema APIs."
     }
   }
 }

@@ -15,7 +15,7 @@
     },
     "filmPage": {
       "title": "Bangun Ulang Halaman Film Rinema",
-      "description": "Membangun ulang halaman detail film Rinema menggunakan teknologi frontend modern."
+      "description": "Membangun ulang halaman detail film Rinema menggunakan teknologi frontend modern dengan API Rinema."
     }
   }
 }
