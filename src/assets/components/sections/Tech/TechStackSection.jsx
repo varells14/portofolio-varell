@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import GradientBackground from '../../visuals/GradientBackground';
 import GradientCircle from '../../visuals/GradientCircle';
+import { useTranslation } from 'react-i18next';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -27,7 +28,8 @@ const itemVariants = {
 };
 
 function TechStackSection() {
-  // Array data untuk ikon dan teks, ini membuat kode lebih bersih dan mudah dikelola
+  const { t } = useTranslation('techstack');
+
   const techStackItems = [
     { src: './images/react.png', name: 'React' },
     { src: './images/nodejs.png', name: 'Node JS' },
@@ -62,13 +64,13 @@ function TechStackSection() {
           className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text"
           variants={textVariants}
         >
-          Tech Stack
+          {t('header')}
         </motion.h1>
         <motion.p // Animasi untuk paragraf deskripsi
           className="text-[20px] text-gray-100"
           variants={textVariants}
         >
-          Our skills enable us to transform your ideas into an inspiring web project.
+          {t('paragraph')}
         </motion.p>
       </div>
 
