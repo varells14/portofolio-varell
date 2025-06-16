@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX } from 'react-icons/fi'; // Import ikon hamburger dan silang
+import { FiMenu, FiX } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 const FloatingNavbar = () => {
@@ -12,20 +12,16 @@ const FloatingNavbar = () => {
   const currentLang = i18n.language;
   const controls = useAnimation();
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isVisible, setIsVisible] = useState(true); // Default: terlihat saat awal
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State untuk menu mobile
+  const [isVisible, setIsVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Handler untuk menyembunyikan/menampilkan navbar saat scroll
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
-      // Gulir ke bawah
       if (isVisible && window.scrollY > 100) {
-        // Sembunyikan setelah 100px gulir ke bawah
         controls.start({ y: -100, opacity: 0 });
         setIsVisible(false);
       }
     } else {
-      // Gulir ke atas
       if (!isVisible) {
         controls.start({ y: 0, opacity: 1 });
         setIsVisible(true);
@@ -41,7 +37,6 @@ const FloatingNavbar = () => {
     };
   }, [lastScrollY, isVisible, controls]);
 
-  // Fungsi untuk menutup menu mobile saat link diklik
   const handleNavLinkClick = () => {
     setIsMobileMenuOpen(false);
   };
@@ -62,7 +57,6 @@ const FloatingNavbar = () => {
                   rounded-full shadow-lg p-3 flex md:pr-0 pr-6 items-center justify-end md:justify-center
                   border border-white border-opacity-20"
       >
-        {/* Navigasi Desktop */}
         <ul className="hidden md:flex space-x-6 text-white font-medium">
           <li>
             <a href="#home" className="hover:text-purple-400 transition-colors">
@@ -118,7 +112,6 @@ const FloatingNavbar = () => {
           </li>
         </ul>
 
-        {/* Tombol Hamburger/Close untuk Mobile */}
         <div className="md:hidden">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-white text-2xl focus:outline-none" aria-label="Toggle navigation">
             {isMobileMenuOpen ? <FiX /> : <FiMenu />}
@@ -126,7 +119,6 @@ const FloatingNavbar = () => {
         </div>
       </motion.nav>
 
-      {/* Overlay dan Menu Mobile (hanya muncul di layar kecil) */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
