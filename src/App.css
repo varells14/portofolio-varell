@@ -21,37 +21,4 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb-purple) transparent;
-}
-
-/* Definisikan warna ungu di sini agar mudah diganti */
-:root {
-  --scrollbar-thumb-purple: #8a2be2; /* Warna ungu (BlueViolet) */
-  --scrollbar-thumb-hover-purple: #6a1b9a; /* Warna ungu lebih gelap untuk hover */
-}
-
-/* --- Untuk Browser WebKit (Chrome, Safari, Edge) --- */
-
-/* Mengatur keseluruhan scrollbar */
-::-webkit-scrollbar {
-  width: 10px; /* Atur lebar scrollbar */
-}
-
-/* Mengatur track (jalur) scrollbar */
-::-webkit-scrollbar-track {
-  background: transparent; /* Latar belakang dibuat transparan */
-}
-
-/* Mengatur thumb (gagang yang bisa digeser) */
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-purple); /* Warna gagang ungu */
-  border-radius: 20px; /* Membuat sudut gagang sangat membulat */
-  border: 3px solid transparent; /* Ini opsional, untuk memberi sedikit jarak */
-  background-clip: content-box; /* Penting jika menggunakan border */
-}
-
-/* Mengatur thumb saat cursor berada di atasnya */
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover-purple);
 }

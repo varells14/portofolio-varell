@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import GradientBackground from '../../visuals/GradientBackground';
 import GradientCircle from '../../visuals/GradientCircle';
@@ -10,9 +9,9 @@ const sectionVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      when: 'beforeChildren', // Pastikan parent muncul dulu sebelum anak-anak
-      staggerChildren: 0.1, // Jeda 0.1 detik antar setiap anak
-      delayChildren: 0.2, // Delay 0.2 detik sebelum anak pertama muncul
+      when: 'beforeChildren',
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     },
   },
 };
@@ -50,39 +49,20 @@ function TechStackSection() {
   ];
 
   return (
-    // Membungkus seluruh section dengan motion.section untuk animasi on-scroll
-    <motion.section
-      id="tech"
-      className="relative z-10 lg:px-20 md:px-16 px-10 py-15"
-      variants={sectionVariants} // Gunakan variants yang didefinisikan
-      initial="hidden" // Mulai dari state 'hidden'
-      whileInView="visible" // Animasikan ke state 'visible' saat masuk viewport
-      viewport={{ once: true, amount: 0.3 }} // Trigger sekali saat 30% elemen terlihat
-    >
+    <motion.section id="tech" className="relative z-10 lg:px-20 md:px-16 px-10 py-15" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
       <div className="text-center font-poppins">
-        <motion.h1 // Animasi untuk h1 "Tech Stack"
-          className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text"
-          variants={textVariants}
-        >
+        <motion.h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text" variants={textVariants}>
           {t('header')}
         </motion.h1>
-        <motion.p // Animasi untuk paragraf deskripsi
-          className="text-[20px] text-gray-100"
-          variants={textVariants}
-        >
+        <motion.p className="text-[20px] text-gray-100" variants={textVariants}>
           {t('paragraph')}
         </motion.p>
       </div>
 
       <div className="flex pt-8 flex-wrap justify-center ">
         <div className="grid md:grid-cols-5 grid-cols-2 space-x-3 space-y-4 justify-center items-center">
-          {/* Mapping melalui array techStackItems untuk merender setiap ikon */}
           {techStackItems.map((item, index) => (
-            <motion.div // Animasi untuk setiap item ikon
-              key={item.name} // Key unik sangat penting saat mapping
-              className="block text-center"
-              variants={itemVariants}
-            >
+            <motion.div key={item.name} className="block text-center" variants={itemVariants}>
               <GradientBackground>
                 <img src={item.src} className="w-28 h-28 p-5 rounded-xl bg-[#1D042F]" alt={item.name} />
               </GradientBackground>
@@ -92,14 +72,7 @@ function TechStackSection() {
           <p></p>
         </div>
       </div>
-      <GradientCircle
-        size="w-[390px] h-[700px]" // Ukuran lebih besar lagi
-        colors={['#A428FD', '#6401AC', '#3B0264']} // Warna lebih terang
-        opacity={0.3}
-        blur="blur-3xl"
-        className="absolute top-0 left-[-15rem]" // Posisikan di luar layar sedikit
-        animationDuration={10}
-      />
+      <GradientCircle size="w-[390px] h-[700px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-0 left-[-15rem]" animationDuration={10} />
     </motion.section>
   );
 }

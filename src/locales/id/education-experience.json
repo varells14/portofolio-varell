@@ -32,5 +32,5 @@
       ]
     }
   ],
-  "skills": ["Pemecahan Masalah", "Kerja Tim", "Komunikasi", "Adaptasi", "Dasar Manajemen Proyek", "Prinsip UI/UX", "Clean Code", "Debugging"]
+  "skills": ["Pemecahan Masalah", "Kerja Tim", "Komunikasi", "Adaptasi", "Dasar Manajemen Proyek", "Prinsip UI/UX", "Prinsip Clean Code", "Debugging", "Pola Arsitektur (MVC)", "RESTful API", "Prinsip Single Responsibility"]
 }

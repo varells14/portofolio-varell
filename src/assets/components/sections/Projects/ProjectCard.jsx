@@ -1,9 +1,6 @@
-// src/components/ProjectCard.jsx
-import React from 'react';
-import { motion } from 'framer-motion'; // Untuk animasi Framer Motion
+import { motion } from 'framer-motion';
 import SpotlightCard from '../../visuals/SpotlightCard';
 
-// Variants untuk animasi kartu proyek
 const projectCardVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
@@ -11,9 +8,7 @@ const projectCardVariants = {
 
 function ProjectCard({ project }) {
   return (
-    <motion.div
-      variants={projectCardVariants} // Terapkan variants di sini
-    >
+    <motion.div variants={projectCardVariants}>
       <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.2)" className="bg-[#1D042F] rounded-2xl">
         <img src={project.imageSrc} className="md:p-8 p-6 pb-6 w-full h-auto rounded-[20px] object-cover" alt={project.title} />
         <h1 className="text-purple-500 font-bold md:text-3xl text-2xl md:px-8 px-6">{project.title}</h1>

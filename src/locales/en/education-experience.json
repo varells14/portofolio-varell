@@ -32,5 +32,17 @@
       ]
     }
   ],
-  "skills": ["Problem Solving", "Teamwork", "Communication", "Adaptability", "Project Management Basics", "UI/UX Principles", "Clean Code", "Debugging"]
+  "skills": [
+    "Problem Solving",
+    "Teamwork",
+    "Communication",
+    "Adaptability",
+    "Project Management Basics",
+    "UI/UX Principles",
+    "Clean Code Principles",
+    "Debugging",
+    "Architectural Patterns (MVC)",
+    "RESTful API",
+    "Single Responsibility Principles"
+  ]
 }

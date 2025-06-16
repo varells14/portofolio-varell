@@ -1,5 +1,3 @@
-// src/components/HeroSection.jsx
-import React from 'react';
 import { motion } from 'framer-motion';
 import Magnet from '../../visuals/Magnet';
 import TiltedCard from '../../visuals/TiltedCard';
@@ -7,7 +5,6 @@ import GradientCircle from '../../visuals/GradientCircle';
 import { FiSend } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
-// ... (kode varian animasi Anda tidak perlu diubah)
 const fadeInUpVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -36,10 +33,8 @@ function HeroSection() {
 
   return (
     <section id="home" className="relative z-10 lg:px-20 md:px-16 px-10 py-20 pt-25">
-      {/* --- KONTAINER PEMBATAS DITAMBAHKAN DI SINI --- */}
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-wrap-reverse md:flex-nowrap w-full">
-          {/* Konten kolom kiri (teks) */}
           <motion.div className="md:w-1/2 w-full md:pt-0 pt-10 font-poppins" variants={staggerContainerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
             <motion.p className="md:text-[40px] text-[25px] text-gray-300 font-bold" variants={fadeInUpVariants}>
               {t('greet')}
@@ -60,7 +55,6 @@ function HeroSection() {
             </Magnet>
           </motion.div>
 
-          {/* Konten kolom kanan (gambar) */}
           <motion.div className="md:w-1/2 flex justify-center items-center w-full " variants={fadeInUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
             <TiltedCard
               imageSrc="./images/iam.jpeg"

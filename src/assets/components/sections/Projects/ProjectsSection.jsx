@@ -1,13 +1,11 @@
-// src/components/section/ProjectsSection.jsx
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
-// ... (kode varian animasi Anda tidak perlu diubah)
 const headingVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 1.3, ease: 'easeOut' } },
