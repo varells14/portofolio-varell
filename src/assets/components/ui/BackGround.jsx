@@ -7,9 +7,10 @@ function Background() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let animationFrame;
+    
     const streaks = [];
     const symbols = [];
-
+    
     const codeChars = [
       '</>',
       '{}',
@@ -25,6 +26,7 @@ function Background() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
+
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
@@ -36,7 +38,7 @@ function Background() {
         y: Math.random() * canvas.height,
         length: Math.random() * 100 + 50,
         speed: Math.random() * 1.5 + 0.5,
-        color: `hsla(${200 + Math.random() * 100}, 80%, 60%, 0.25)`, // biru ke ungu neon
+        color: `hsla(${200 + Math.random() * 100}, 80%, 60%, 0.25)`,
         angle: Math.random() * Math.PI * 2,
       });
     }
@@ -55,16 +57,8 @@ function Background() {
     }
 
     const animate = () => {
-      // Background gelap
-      ctx.fillStyle = '#0a0a1a';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      // Gradient overlay
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, '#1b0930');
-      gradient.addColorStop(0.5, '#2a1f4c');
-      gradient.addColorStop(1, '#0a0a1a');
-      ctx.fillStyle = gradient;
+      // Clear canvas dengan background hitam
+      ctx.fillStyle = '#000000';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw neon streaks
@@ -105,6 +99,7 @@ function Background() {
         ctx.fillText(sym.text, sym.x, sym.y);
 
         sym.y += sym.speedY;
+
         if (sym.y > canvas.height + 20) {
           sym.y = -20;
           sym.x = Math.random() * canvas.width;
