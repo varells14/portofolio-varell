@@ -8,7 +8,6 @@ import { FiGlobe } from 'react-icons/fi';
 const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'tech', label: 'Tech' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
