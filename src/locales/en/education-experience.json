@@ -4,45 +4,63 @@
   "skillsTitle": "Skills",
   "education": [
     {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo_Universitas_Paramadna.png/1200px-Logo_Universitas_Paramadna.png",
-      "institution": "Paramadina University",
+      "logo": "https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/14/143687_logo_unikom.png",
+      "institution": "Indonesian Computer University",
       "degree": "Bachelor’s Degree in Computer Science",
-      "period": "September 2022 - Present",
-      "description": "Focused on software development, algorithms, and information systems."
+      "period": "Informatics Engineering"
+      
     },
     {
-      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
-      "institution": "MAN 1 Bogor",
-      "degree": "Science",
-      "period": "2019 - 2022",
-      "description": "Focused on scientific studies including math and physics."
+      "logo": "https://s3.schoolmedia.id/00-universal/sman3tanjungpinang.sch.id/logo/66b481afca407SMAN_3_TANJUNG_PINANG-removebg-preview.png",
+      "institution": "SMAN 3 Tanjung Pinang",
+      "degree": "Science"
+      
     }
   ],
   "experience": [
     {
-      "logo": "https://www.carlogos.org/logo/Hino-symbol-1440x900.png",
-      "company": "Head Office PT. Hino Motor Sales Indonesia",
-      "position": "IT Change Management",
-      "period": "July 2023 - November 2023",
+      "logo": "https://www.logisteed.com/assets/img/profile/img_policy_01.webp",
+      "company": "PT. Berdiri Matahari Logistik (Logisteed)",
+      "position": "IT Officer",
+      "period": "Februari 2024 - Present",
       "responsibilities": [
-        "Collaborated with technical teams to translate complex IT concepts into easy-to-understand visual content",
-        "Created visual documentation and communication assets (flyers, animation videos, PPT) to support IT Change Management initiatives.",
-        "Ensured all communication materials aligned with corporate branding and IT governance standards.",
-        "Utilized tools such as Canva, Adobe Illustrator, and PowerPoint to create compelling and informative visuals."
+        "Developed web-based HRIS and Procurement systems with integrated approval workflows.",
+        "Managed IT assets and infrastructure.",
+        "Administered servers and corporate networks.",
+        "Configured Active Directory and DHCP services.",
+        "Configured shared folders with access controls."
+      ]
+    },
+    {
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQEiWki2bWPvRQ/company-logo_200_200/company-logo_200_200/0/1679380752392?e=2147483647&v=beta&t=VpbWOJAoGTKhil5iXRttIVu9wICl2IEKnyRN8NCrrtU",
+      "company": "PT. Daidan Utama",
+      "position": "IT Staff",
+      "period": "January 2023 - January 2024",
+      "responsibilities": [
+        "Developed integrated web-based broker operation system.",
+        "Manage IT Equiment Hardware software.",
+        "Configured shared folders with access controls.",
+        "Managed corporate network infrastructure and enforced bandwidth policies for all connected devices.",
+        "Configured Active Directory and DHCP services."
       ]
     }
   ],
   "skills": [
-    "Problem Solving",
-    "Teamwork",
-    "Communication",
-    "Adaptability",
-    "Project Management Basics",
-    "UI/UX Principles",
-    "Clean Code Principles",
-    "Debugging",
-    "Architectural Patterns (MVC)",
-    "RESTful API",
-    "Single Responsibility Principles"
-  ]
+  "Communication",
+  "Problem Solving Skills",
+  "Time Management",
+  "Team Work",
+  "Hard Worker",
+  "Laravel",
+  "PHP",
+  "HTML",
+  "CSS",
+  "MySQL",
+  "Git",
+  "UI/UX Design",
+  "IT Support",
+  "Network Administration",
+  "Web Development"
+]
+
 }

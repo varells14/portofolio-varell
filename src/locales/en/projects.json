@@ -2,20 +2,17 @@
   "title": "Projects",
   "description": "A collection of selected projects demonstrating my skills in software engineering.",
   "categories": {
-    "all": "All Projects",
-    "fullstack": "Fullstack",
-    "frontend": "Frontend",
-    "backend": "Backend"
+    "all": "All Projects"
   },
   "no_project": "No projects found in this category.",
   "projects_content": {
     "rinema": {
-      "title": "Rinema Web App",
-      "description": "Digital platform dedicated to celebrating and exploring Indonesian cinema. Designed to build a passionate community of film lovers."
+      "title": "Procurement System",
+      "description": "A real-time purchasing application with approval workflows to streamline procurement requests."
     },
     "filmPage": {
-      "title": "Rebuild Film Page Rinema",
-      "description": "Rebuild the film details page for Rinema using modern frontend technologies with Rinema APIs."
+      "title": "Inventory Material Request System",
+      "description": "A real-time inventory request system with integrated approval flow for efficient material management."
     }
   }
 }

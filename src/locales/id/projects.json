@@ -10,12 +10,12 @@
   "no_project": "Tidak ada proyek dalam kategori ini.",
   "projects_content": {
     "rinema": {
-      "title": "Aplikasi Web Rinema",
-      "description": "Platform digital untuk merayakan dan mengeksplorasi perfilman Indonesia. Dirancang untuk membangun komunitas pecinta film."
+      "title": "Procurement System",
+      "description": "Aplikasi pembelian real-time dengan alur kerja persetujuan untuk mempermudah permintaan pengadaan."
     },
     "filmPage": {
-      "title": "Bangun Ulang Halaman Film Rinema",
-      "description": "Membangun ulang halaman detail film Rinema menggunakan teknologi frontend modern dengan API Rinema."
+      "title": "Inventory Material Request System",
+      "description": "Sistem permintaan persediaan real-time dengan alur persetujuan terintegrasi untuk pengelolaan material yang efisien."
     }
   }
 }

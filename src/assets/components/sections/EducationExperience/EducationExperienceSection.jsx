@@ -36,16 +36,7 @@ const EducationExperienceSection = () => {
     <section id="education-experience-skills" className="relative z-10 px-10 md:px-16 lg:px-20 py-10 text-white font-poppins">
       <motion.div className="max-w-6xl mx-auto" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
         {/* Pendidikan */}
-        <div className="mb-20">
-          <motion.h3 className="text-5xl md:text-5xl font-bold mb-10 text-left animated-gradient-text" variants={subHeadingVariants}>
-            {t('educationTitle')}
-          </motion.h3>
-          <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1">
-            {educationItems.map((item, index) => (
-              <EducationItem key={index} {...item} />
-            ))}
-          </div>
-        </div>
+        
         <GradientCircle size="w-[390px] h-[700px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-0 right-[-15rem]" animationDuration={10} />
 
         {/* Pengalaman */}
@@ -56,6 +47,17 @@ const EducationExperienceSection = () => {
           <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1">
             {experienceItems.map((item, index) => (
               <ExperienceItem key={index} {...item} />
+            ))}
+          </div>
+        </div>
+        
+        <div className="mb-20">
+          <motion.h3 className="text-5xl md:text-5xl font-bold mb-10 text-left animated-gradient-text" variants={subHeadingVariants}>
+            {t('educationTitle')}
+          </motion.h3>
+          <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1">
+            {educationItems.map((item, index) => (
+              <EducationItem key={index} {...item} />
             ))}
           </div>
         </div>

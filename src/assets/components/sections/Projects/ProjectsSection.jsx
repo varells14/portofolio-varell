@@ -36,20 +36,20 @@ function ProjectsSection() {
     {
       id: 'rinema',
       imageSrc: './images/project1.webp',
-      date: 'February 2025',
+      
       techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
-      githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
-      liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
+     
+      liveSiteLink: 'https://app.logisteed.id/login',
       category: 'fullstack',
     },
     {
       id: 'filmPage',
       imageSrc: './images/project2.webp',
-      date: 'April 2025',
-      techIcons: ['./images/react.png', './images/tailwind.png', './images/javascript.png'],
-      githubLink: 'https://github.com/ichramsyah/rinema-fullstack-webapp',
-      liveSiteLink: 'https://rinemaa.paramadina.ac.id/',
-      category: 'frontend',
+      
+      techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
+      
+      liveSiteLink: 'https://maestroapps.my.id/login',
+      category: 'fullstack',
     },
   ];
 
@@ -76,27 +76,7 @@ function ProjectsSection() {
             >
               {t('categories.all')}
             </button>
-            <button
-              onClick={() => handleCategoryClick('fullstack')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'fullstack' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
-            >
-              {t('categories.fullstack')}
-            </button>
-            <button
-              onClick={() => handleCategoryClick('frontend')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'frontend' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
-            >
-              {t('categories.frontend')}
-            </button>
-            <button
-              onClick={() => handleCategoryClick('backend')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'backend' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
-            >
-              {t('categories.backend')}
-            </button>
+            
           </motion.div>
         </motion.div>
 

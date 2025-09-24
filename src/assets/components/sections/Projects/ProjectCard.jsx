@@ -28,7 +28,14 @@ function ProjectCard({ project }) {
             )}
             {project.liveSiteLink && (
               <a href={project.liveSiteLink} target="_blank" rel="noopener noreferrer" className="font-bold text-purple-600 border-b-2 border-transparent hover:border-purple-600 transition-all text-2xl">
-                live site <i className="fas fa-arrow-right text-purple-600"></i>
+               <motion.i
+  className="fas fa-arrow-right text-purple-600"
+  animate={{
+    opacity: [1, 0.5, 1],
+    textShadow: ["0px 0px 4px #a855f7", "0px 0px 12px #a855f7", "0px 0px 4px #a855f7"]
+  }}
+  transition={{ duration: 1.5, repeat: Infinity }}
+/>
               </a>
             )}
           </div>

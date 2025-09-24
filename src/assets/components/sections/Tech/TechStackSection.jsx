@@ -44,7 +44,6 @@ function TechStackSection() {
     { src: './images/postman.png', name: 'Postman' },
     { src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/CPanel_logo.svg/2560px-CPanel_logo.svg.png', name: 'cPanel' },
     { src: './images/figma.png', name: 'Figma' },
-    { src: './images/adobe illustrator.png', name: 'Adobe Illustrator' },
     { src: './images/vite.png', name: 'Vite' },
   ];
 

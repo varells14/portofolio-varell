@@ -78,6 +78,11 @@ const FloatingNavbar = () => {
               Projects
             </a>
           </li>
+          <li>
+            <a href="#contact" className="hover:text-purple-400 transition-colors">
+              Contact
+            </a>
+          </li>
 
           <li className="relative">
             <button onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} className="text-sm px-3 py-1 rounded bg-purple-600 hover:bg-purple-700 transition flex items-center gap-2">

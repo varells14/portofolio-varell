@@ -4,33 +4,63 @@
   "skillsTitle": "Keahlian",
   "education": [
     {
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Logo_Universitas_Paramadna.png/1200px-Logo_Universitas_Paramadna.png",
-      "institution": "Universitas Paramadina",
-      "degree": "S1 Teknik Informatika",
-      "period": "September 2022 - Sekarang",
-      "description": "Fokus pada pengembangan perangkat lunak, algoritma, dan sistem informasi."
+      "logo": "https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/14/143687_logo_unikom.png",
+      "institution": "Universitas Komputer Indonesia",
+      "degree": "Sarjana Ilmu Komputer",
+      "period": "Teknik Informatika"
+      
     },
     {
-      "logo": "https://ppdb.man1kotabogor.id/logoman.png",
-      "institution": "MAN 1 Bogor",
-      "degree": "Ilmu Pengetahuan Alam",
-      "period": "2019 - 2022",
-      "description": "Fokus pada studi ilmiah termasuk matematika dan fisika."
+      "logo": "https://s3.schoolmedia.id/00-universal/sman3tanjungpinang.sch.id/logo/66b481afca407SMAN_3_TANJUNG_PINANG-removebg-preview.png",
+      "institution": "SMAN 3 Tanjung Pinang",
+      "degree": "Ilmpu Pengetahuan Alam"
+      
     }
   ],
   "experience": [
     {
-      "logo": "https://www.carlogos.org/logo/Hino-symbol-1440x900.png",
-      "company": "Head Office PT. Hino Motor Sales Indonesia",
-      "position": "IT Change Management",
-      "period": "Juli 2023 - November 2023",
+      "logo": "https://www.logisteed.com/assets/img/profile/img_policy_01.webp",
+      "company": "PT. Berdiri Matahari Logistik (Logisteed)",
+      "position": "IT Officer",
+      "period": "Februari 2024 - Present",
       "responsibilities": [
-        "Bekerja sama dengan tim teknis untuk menerjemahkan konsep IT yang kompleks menjadi konten visual yang mudah dipahami.",
-        "Membuat dokumentasi visual dan materi komunikasi (seperti flyer, video animasi, dan presentasi) untuk mendukung inisiatif IT Change Management.",
-        "Memastikan semua materi komunikasi sesuai dengan standar branding perusahaan dan tata kelola IT.",
-        "Menggunakan tools seperti Canva, Adobe Illustrator, dan PowerPoint untuk membuat visual yang menarik dan informatif."
+        "Membuat sistem HRIS dan Procurement berbasis web dengan alur persetujuan terintegrasi.",
+        "Mengelola aset dan infrastruktur IT.",
+        "Mengadministrasi server dan jaringan perusahaan.",
+        "Mengonfigurasi layanan Active Directory dan DHCP.",
+        "Mengonfigurasi folder bersama dengan pengaturan akses."
+      ]
+    },
+    {
+      "logo": "https://media.licdn.com/dms/image/v2/C560BAQEiWki2bWPvRQ/company-logo_200_200/company-logo_200_200/0/1679380752392?e=2147483647&v=beta&t=VpbWOJAoGTKhil5iXRttIVu9wICl2IEKnyRN8NCrrtU",
+      "company": "PT. Daidan Utama",
+      "position": "IT Staff",
+      "period": "January 2023 - January 2024",
+      "responsibilities": [
+        "Membuat sistem operasi broker berbasis web yang terintegrasi.",
+        "Mengelola peralatan IT, baik perangkat keras maupun perangkat lunak.",
+        "Mengonfigurasi folder bersama dengan pengaturan akses.",
+        "Mengelola infrastruktur jaringan perusahaan dan menerapkan kebijakan bandwidth untuk seluruh perangkat terhubung.",
+        "Mengonfigurasi layanan Active Directory dan DHCP."
       ]
     }
   ],
-  "skills": ["Pemecahan Masalah", "Kerja Tim", "Komunikasi", "Adaptasi", "Dasar Manajemen Proyek", "Prinsip UI/UX", "Prinsip Clean Code", "Debugging", "Pola Arsitektur (MVC)", "RESTful API", "Prinsip Single Responsibility"]
+  "skills": [
+  "komunikasi",
+  "Pemecahan Masalah",
+  "Manajemen Waktu",
+  "Kerja Tim",
+  "Pekerja Keras",
+  "Laravel",
+  "PHP",
+  "HTML",
+  "CSS",
+  "MySQL",
+  "Git",
+  "UI/UX Design",
+  "IT Support",
+  "Network Administration",
+  "Web Development"
+]
+
 }

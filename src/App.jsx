@@ -7,6 +7,7 @@ import ProjectsSection from './assets/components/sections/Projects/ProjectsSecti
 import FloatingNavbar from './assets/components/ui/FloatingNavbar';
 import AboutSection from './assets/components/sections/About/AboutSection';
 import EducationExperienceSection from './assets/components/sections/EducationExperience/EducationExperienceSection';
+import ContactSection from './assets/components/sections/Contact/ContactSection';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <EducationExperienceSection />
         <TechStackSection />
         <ProjectsSection />
+        <ContactSection />
       </div>
       <ScrollProgressBar />
     </div>

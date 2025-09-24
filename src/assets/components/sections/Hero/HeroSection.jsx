@@ -48,18 +48,20 @@ function HeroSection() {
             <motion.p className="text-gray-200 pt-7 pr-5 text-[20px] pb-10" variants={fadeInUpVariants}>
               {t('paragraph')}
             </motion.p>
-            <Magnet disabled={false}>
-              <motion.a href="#" className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white" variants={fadeInUpVariants}>
-                Download CV <i className="fas fa-download pl-2 "></i>
-              </motion.a>
-            </Magnet>
+              <motion.a
+                  href="/cv.pdf"  
+                  download="CV-Varell.pdf"  
+                  className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
+                >
+                  Download CV <i className="fas fa-download pl-2"></i>
+                </motion.a>
           </motion.div>
 
           <motion.div className="md:w-1/2 flex justify-center items-center w-full " variants={fadeInUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>
             <TiltedCard
               imageSrc="./images/iam.jpeg"
               altText="My Foto"
-              captionText="Ichramsyah"
+              captionText="Va.rells"
               containerHeight="390px"
               containerWidth="390px"
               imageHeight="350px"
@@ -71,22 +73,7 @@ function HeroSection() {
               displayOverlayContent={true}
               overlayContent={
                 <div className="relative w-full h-full">
-                  <div className="flex items-center bg-white w-[20rem] justify-between rounded-t-xl py-2 pl-3 pr-5">
-                    <div className="flex items-center">
-                      <img src="/images/ig-profile.JPG" className="rounded-full w-7 h-7" alt="" />
-                      <a href="https://instagram.com/ichramabdr" target="_blank" rel="noreferrer" className="font-bold text-[14px] pl-2">
-                        Ichramabdr
-                      </a>
-                    </div>
-                    <i className="fas fa-ellipsis-v"></i>
-                  </div>
-                  <div className="absolute top-[20rem] bg-white rounded-b-xl w-[20rem]">
-                    <div className="py-2 px-3 flex item-center gap-3">
-                      <i className="far fa-heart hover:text-red-500 text-[18px]"></i>
-                      <i className="far fa-comment hover:text-gray-500 text-[18px]"></i>
-                      <FiSend className="hover:text-yellow-500" size={18} />
-                    </div>
-                  </div>
+                  
                 </div>
               }
             />
