@@ -49,7 +49,7 @@ function HeroSection() {
               {t('paragraph')}
             </motion.p>
               <motion.a
-                  href="/cv.pdf"  
+                  href="/CV-Varell.pdf"  
                   download="CV-Varell.pdf"  
                   className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
                 >
