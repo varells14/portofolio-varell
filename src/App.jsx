@@ -1,4 +1,5 @@
 import ScrollProgressBar from './assets/components/ui/ScrollProgressBar';
+import ScrollIndicator from './assets/components/ui/ScrollIndicator';
 import './App.css';
 import HeroSection from './assets/components/sections/Hero/HeroSection';
 import Background from './assets/components/ui/BackGround';
@@ -23,6 +24,7 @@ function App() {
         <ContactSection />
       </div>
       <ScrollProgressBar />
+      <ScrollIndicator />
     </div>
   );
 }

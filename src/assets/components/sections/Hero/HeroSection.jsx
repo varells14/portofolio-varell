@@ -49,12 +49,12 @@ function HeroSection() {
               {t('paragraph')}
             </motion.p>
               <motion.a
-                   href="/images/varell.pdf"
-                  download="varell.pdf"  
-                  className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
-                >
-                  Download CV <i className="fas fa-download pl-2"></i>
-                </motion.a>
+              href="/images/varell.pdf"
+              download="varell.pdf"
+              className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
+            >
+              Download CV <i className="fas fa-download pl-2"></i>
+            </motion.a>
           </motion.div>
 
           <motion.div className="md:w-1/2 flex justify-center items-center w-full " variants={fadeInUpVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.5 }}>

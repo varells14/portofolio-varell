@@ -51,6 +51,7 @@ function ProjectsSection() {
       liveSiteLink: 'https://maestroapps.my.id/login',
       category: 'fullstack',
     },
+    
   ];
 
   const handleCategoryClick = (category) => {

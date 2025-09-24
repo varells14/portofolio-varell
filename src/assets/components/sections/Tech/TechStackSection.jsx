@@ -3,29 +3,6 @@ import GradientBackground from '../../visuals/GradientBackground';
 import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.4, ease: 'easeOut' } },
-};
-
 function TechStackSection() {
   const { t } = useTranslation('techstack');
 
@@ -47,32 +24,57 @@ function TechStackSection() {
     { src: './images/vite.png', name: 'Vite' },
   ];
 
+  // Duplikasi array untuk infinite scroll
+  const scrollingItems = [...techStackItems, ...techStackItems];
+
   return (
-    <motion.section id="tech" className="relative z-10 lg:px-20 md:px-16 px-10 py-15" variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
-      <div className="text-center font-poppins">
-        <motion.h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text" variants={textVariants}>
+    <section id="tech" className="relative z-10 lg:px-20 md:px-16 px-10 py-15 overflow-hidden">
+      {/* Header */}
+      <div className="text-center font-poppins mb-10">
+        <h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text">
           {t('header')}
-        </motion.h1>
-        <motion.p className="text-[20px] text-gray-100" variants={textVariants}>
-          {t('paragraph')}
-        </motion.p>
+        </h1>
+        <p className="text-[20px] text-gray-100">{t('paragraph')}</p>
       </div>
 
-      <div className="flex pt-8 flex-wrap justify-center ">
-        <div className="grid md:grid-cols-5 grid-cols-2 space-x-3 space-y-4 justify-center items-center">
-          {techStackItems.map((item, index) => (
-            <motion.div key={item.name} className="block text-center" variants={itemVariants}>
+      {/* Horizontal scroll container */}
+      <div className="w-full overflow-hidden">
+        <motion.div
+          className="flex space-x-4 md:space-x-6"
+          style={{ display: 'flex' }}
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
+        >
+          {scrollingItems.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center min-w-[5rem] md:min-w-[7rem]"
+            >
               <GradientBackground>
-                <img src={item.src} className="w-28 h-28 p-5 rounded-xl bg-[#1D042F]" alt={item.name} />
+                <img
+                  src={item.src}
+                  alt={item.name}
+                  className="w-16 h-16 md:w-28 md:h-28 p-3 md:p-5 rounded-xl bg-[#1D042F]"
+                />
               </GradientBackground>
-              <p className="text-gray-300">{item.name}</p>
-            </motion.div>
+              <p className="text-gray-300 mt-2 text-center text-xs md:text-sm">
+                {item.name}
+              </p>
+            </div>
           ))}
-          <p></p>
-        </div>
+        </motion.div>
       </div>
-      <GradientCircle size="w-[390px] h-[700px]" colors={['#A428FD', '#6401AC', '#3B0264']} opacity={0.3} blur="blur-3xl" className="absolute top-0 left-[-15rem]" animationDuration={10} />
-    </motion.section>
+
+      {/* Background Gradient Circle */}
+      <GradientCircle
+        size="w-[390px] h-[700px]"
+        colors={['#A428FD', '#6401AC', '#3B0264']}
+        opacity={0.3}
+        blur="blur-3xl"
+        className="absolute top-0 left-[-15rem]"
+        animationDuration={10}
+      />
+    </section>
   );
 }
 
