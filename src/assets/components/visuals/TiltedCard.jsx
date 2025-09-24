@@ -17,7 +17,7 @@ export default function TiltedCard({
   imageWidth = "300px",
   scaleOnHover = 1.05,
   rotateAmplitude = 12,
-  showMobileWarning = true,
+  showMobileWarning = false,
   showTooltip = false,
 }) {
   const ref = useRef(null);
@@ -35,28 +35,27 @@ export default function TiltedCard({
 
   const [lastY, setLastY] = useState(0);
   const [flipped, setFlipped] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   // =========================
   // CODE WITH SYNTAX COLORS
   // =========================
- const codeLines = [
-  [
-    { text: "const", className: "text-purple-400" },
-    { text: " hello", className: "text-blue-300" },
-    { text: " = ", className: "text-gray-200" },
-    { text: '"Hello";', className: "text-green-400" },
-  ],
-  [
-    { text: "const", className: "text-purple-400" },
-    { text: " myName", className: "text-blue-300" },
-    { text: " = ", className: "text-gray-200" },
-    { text: '"Varell";', className: "text-green-400" },
-  ],
-  [
-    { text: '"Have a great day! :))"', className: "text-yellow-400" },
-  ],
-];
+  const codeLines = [
+    [
+      { text: "const", className: "text-purple-400" },
+      { text: " hello", className: "text-blue-300" },
+      { text: " = ", className: "text-gray-200" },
+      { text: '"Hello";', className: "text-green-400" },
+    ],
+    [
+      { text: "const", className: "text-purple-400" },
+      { text: " myName", className: "text-blue-300" },
+      { text: " = ", className: "text-gray-200" },
+      { text: '"Varell";', className: "text-green-400" },
+    ],
+    [
+      { text: '"Have a great day! :))"', className: "text-yellow-400" },
+    ],
+  ];
 
   const [displayedLines, setDisplayedLines] = useState([[], [], []]);
   const [lineIndex, setLineIndex] = useState(0);
@@ -106,74 +105,25 @@ export default function TiltedCard({
   }, [flipped, lineIndex, tokenIndex, charIndex]);
 
   // =========================
-  // MOBILE DETECTION
+  // AUTO FLIP - FOTO 2 DETIK, TEKS 7 DETIK
   // =========================
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // =========================
-  // AUTO FLIP MOBILE (3s foto, 10s teks)
-  // =========================
-  useEffect(() => {
-    if (!isMobile) return;
-
     let timeout;
+    
     if (flipped) {
+      // Jika sedang menampilkan teks (flipped = true), tunggu 7 detik
       timeout = setTimeout(() => {
         setFlipped(false);
-      }, 5000);
+      }, 7000);
     } else {
+      // Jika sedang menampilkan foto (flipped = false), tunggu 2 detik
       timeout = setTimeout(() => {
         setFlipped(true);
       }, 2000);
     }
+    
     return () => clearTimeout(timeout);
-  }, [isMobile, flipped]);
-
-  // =========================
-  // MOUSE HANDLERS
-  // =========================
-  function handleMouse(e) {
-    if (!ref.current || isMobile) return;
-
-    const rect = ref.current.getBoundingClientRect();
-    const offsetX = e.clientX - rect.left - rect.width / 2;
-    const offsetY = e.clientY - rect.top - rect.height / 2;
-
-    const rotationX = (offsetY / (rect.height / 2)) * -rotateAmplitude;
-    const rotationY = (offsetX / (rect.width / 2)) * rotateAmplitude;
-
-    rotateX.set(rotationX);
-    rotateY.set(rotationY);
-
-    x.set(e.clientX - rect.left);
-    y.set(e.clientY - rect.top);
-
-    const velocityY = offsetY - lastY;
-    rotateFigcaption.set(-velocityY * 0.6);
-    setLastY(offsetY);
-  }
-
-  function handleMouseEnter() {
-    if (isMobile) return;
-    scale.set(scaleOnHover);
-    opacity.set(1);
-    setFlipped(true);
-  }
-
-  function handleMouseLeave() {
-    if (isMobile) return;
-    opacity.set(0);
-    scale.set(1);
-    rotateX.set(0);
-    rotateY.set(0);
-    rotateFigcaption.set(0);
-    setFlipped(false);
-  }
+  }, [flipped]);
 
   // =========================
   // RENDER
@@ -186,16 +136,7 @@ export default function TiltedCard({
         height: containerHeight,
         width: containerWidth,
       }}
-      onMouseMove={handleMouse}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
-      {showMobileWarning && (
-        <div className="absolute top-4 text-center text-sm block sm:hidden">
-          This effect is not optimized for mobile. Check on desktop.
-        </div>
-      )}
-
       {/* CARD WRAPPER */}
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d]"
@@ -204,9 +145,6 @@ export default function TiltedCard({
         style={{
           width: imageWidth,
           height: imageHeight,
-          rotateX,
-          rotateY,
-          scale,
         }}
       >
         {/* FRONT */}
