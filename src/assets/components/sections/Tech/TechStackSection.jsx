@@ -1,8 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import GradientBackground from '../../visuals/GradientBackground';
-import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
 export default function TechStackSection() {
@@ -58,27 +56,16 @@ export default function TechStackSection() {
               key={idx}
               className="flex flex-col items-center justify-center min-w-[5rem] md:min-w-[7rem] hover:scale-105 transition-transform duration-300"
             >
-              <GradientBackground>
-                <img
-                  src={item.src}
-                  alt={item.name}
-                  className="w-16 h-16 md:w-28 md:h-28 p-3 md:p-5 rounded-xl bg-[#1D042F]"
-                />
-              </GradientBackground>
+              <img
+                src={item.src}
+                alt={item.name}
+                className="w-16 h-16 md:w-28 md:h-28 p-3 md:p-5 rounded-xl bg-[#1D042F]"
+              />
               <p className="text-gray-300 mt-2 text-center text-xs md:text-sm">{item.name}</p>
             </div>
           ))}
         </div>
       </div>
-
-      <GradientCircle
-        size="w-[390px] h-[700px]"
-        colors={['#A428FD', '#6401AC', '#3B0264']}
-        opacity={0.3}
-        blur="blur-3xl"
-        className="absolute top-0 left-[-15rem]"
-        animationDuration={10}
-      />
 
       <style jsx>{`
         .marquee-container {
