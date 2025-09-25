@@ -6,11 +6,15 @@
   },
   "no_project": "No projects found in this category.",
   "projects_content": {
-    "rinema": {
+    "procurement": {
       "title": "Procurement System",
       "description": "A real-time purchasing application with approval workflows to streamline procurement requests."
     },
-    "filmPage": {
+    "inventory": {
+      "title": "Inventory Material Request System",
+      "description": "A real-time inventory request system with integrated approval flow for efficient material management."
+    },
+    "quotation": {
       "title": "Inventory Material Request System",
       "description": "A real-time inventory request system with integrated approval flow for efficient material management."
     }

@@ -14,22 +14,22 @@ const ProjectsSection = () => {
   const allProjects = useMemo(
     () => [
       {
-        id: 'rinema',
+        id: 'procurement',
         imageSrc: './images/project1.webp',
         techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
         liveSiteLink: 'https://app.logisteed.id/login',
         category: 'fullstack',
       },
       {
-        id: 'filmPage',
+        id: 'inventory',
         imageSrc: './images/project2.webp',
         techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
         liveSiteLink: 'https://maestroapps.my.id/login',
         category: 'fullstack',
       },
       {
-        id: 'filmPage',
-        imageSrc: './images/project2.webp',
+        id: 'quotation',
+        imageSrc: './images/project3.webp',
         techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
         liveSiteLink: 'https://maestroapps.my.id/login',
         category: 'fullstack',
