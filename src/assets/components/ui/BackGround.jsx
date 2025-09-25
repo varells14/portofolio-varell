@@ -19,6 +19,7 @@ function Background() {
       '=>',
       'const',
       'let',
+      'if',
       'function',
     ];
 

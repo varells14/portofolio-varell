@@ -1,10 +1,17 @@
-import { motion } from 'framer-motion';
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import GradientBackground from '../../visuals/GradientBackground';
 import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
 function TechStackSection() {
   const { t } = useTranslation('techstack');
+  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef(null);
+  const [scrollWidth, setScrollWidth] = useState(0);
+  const controls = useAnimation();
 
   const techStackItems = [
     { src: './images/react.png', name: 'React' },
@@ -24,8 +31,37 @@ function TechStackSection() {
     { src: './images/vite.png', name: 'Vite' },
   ];
 
-  // Duplikasi array untuk infinite scroll
-  const scrollingItems = [...techStackItems, ...techStackItems];
+  // Responsive check
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Hitung lebar container untuk marquee
+  useEffect(() => {
+    if (containerRef.current) {
+      setScrollWidth(containerRef.current.scrollWidth / 2); // duplikasi
+    }
+  }, [containerRef, isMobile]);
+
+  // Infinite scroll animation
+  useEffect(() => {
+    if (scrollWidth > 0) {
+      controls.start({
+        x: [-0, -scrollWidth],
+        transition: {
+          repeat: Infinity,
+          duration: isMobile ? 12 : 20,
+          ease: 'linear',
+        },
+      });
+    }
+  }, [scrollWidth, isMobile, controls]);
+
+  // Duplikasi array untuk marquee
+  const marqueeItems = [...techStackItems, ...techStackItems];
 
   return (
     <section id="tech" className="relative z-10 lg:px-20 md:px-16 px-10 py-15 overflow-hidden">
@@ -38,17 +74,20 @@ function TechStackSection() {
       </div>
 
       {/* Horizontal scroll container */}
-      <div className="w-full overflow-hidden">
+      <div className="w-full overflow-hidden" ref={containerRef}>
         <motion.div
           className="flex space-x-4 md:space-x-6"
+          animate={controls}
           style={{ display: 'flex' }}
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
         >
-          {scrollingItems.map((item, index) => (
-            <div
+          {marqueeItems.map((item, index) => (
+            <motion.div
               key={index}
-              className="flex flex-col items-center justify-center min-w-[5rem] md:min-w-[7rem]"
+              className={`flex flex-col items-center justify-center min-w-[5rem] ${
+                isMobile ? 'md:min-w-[6rem]' : 'md:min-w-[7rem]'
+              }`}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
               <GradientBackground>
                 <img
@@ -60,7 +99,7 @@ function TechStackSection() {
               <p className="text-gray-300 mt-2 text-center text-xs md:text-sm">
                 {item.name}
               </p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

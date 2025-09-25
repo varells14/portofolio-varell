@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowDown, FiArrowUp, FiGlobe, FiCheck } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
@@ -19,12 +19,12 @@ const ScrollIndicator = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
+  // Paksa English saat halaman dibuka
   useEffect(() => {
-  if (!localStorage.getItem('i18nextLng')) {
     i18n.changeLanguage('en');
-  }
-}, [i18n]);
+  }, [i18n]);
 
+  // Scroll tracking
   useEffect(() => {
     const handleScroll = () => {
       let current = 0;
@@ -60,56 +60,63 @@ const ScrollIndicator = () => {
     }
   };
 
-  const changeLanguage = (lang) => {
+  const toggleLanguage = (lang) => {
     i18n.changeLanguage(lang);
     setIsLangDropdownOpen(false);
   };
 
   return (
-    <div className="fixed right-5 bottom-10 md:bottom-16 z-50 flex flex-col items-center gap-3">
-      {/* Modern Language Dropdown */}
-      <div className="relative">
+    <div className="fixed right-5 bottom-10 md:bottom-16 z-50 flex flex-col items-center gap-4">
+
+      {/* Desktop: Toggle */}
+      <div className="hidden md:flex relative items-center w-24 h-10 bg-gray-800 rounded-full cursor-pointer p-1">
+        <motion.div
+          className="absolute w-1/2 h-full bg-purple-500 rounded-full shadow-md"
+          animate={{ x: currentLang === 'en' ? 0 : 96 / 2 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+        />
+        <div className="relative flex justify-between w-full px-2 text-sm font-medium text-white z-10 select-none">
+          <span onClick={() => toggleLanguage('en')}>EN</span>
+          <span onClick={() => toggleLanguage('id')}>ID</span>
+        </div>
+      </div>
+
+      {/* Mobile: Globe Button */}
+      <div className="md:hidden relative">
         <motion.button
           onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center justify-center gap-1 text-sm px-4 py-3 rounded-full bg-gradient-to-br from-purple-500 to-indigo-500 text-white shadow-lg hover:shadow-xl transition-all"
+          className="flex items-center justify-center p-3 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg"
         >
-          <FiGlobe className="text-lg" />
-          {currentLang.toUpperCase()}
+          <FiGlobe size={24} />
         </motion.button>
 
-        {isLangDropdownOpen && (
-          <motion.ul
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute bottom-full mb-3 w-36 bg-[#1B002F]/95 border border-purple-600 rounded-lg shadow-2xl overflow-hidden z-50 backdrop-blur-sm"
-          >
-            <li>
-              <button
-                onClick={() => changeLanguage('en')}
-                className={`w-full flex items-center justify-between px-4 py-2 text-sm hover:bg-purple-700 transition ${
-                  currentLang === 'en' ? 'bg-purple-600 text-white' : 'text-gray-300'
-                }`}
-              >
-                English
-                {currentLang === 'en' && <FiCheck className="text-white" />}
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => changeLanguage('id')}
-                className={`w-full flex items-center justify-between px-4 py-2 text-sm hover:bg-purple-700 transition ${
-                  currentLang === 'id' ? 'bg-purple-600 text-white' : 'text-gray-300'
-                }`}
-              >
-                Indonesia
-                {currentLang === 'id' && <FiCheck className="text-white" />}
-              </button>
-            </li>
-          </motion.ul>
-        )}
+        <AnimatePresence>
+          {isLangDropdownOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className="absolute bottom-full mb-2 w-32 right-1/2 translate-x-1/2 bg-[#1B002F]/95 border border-purple-600 rounded-xl shadow-lg overflow-hidden backdrop-blur-sm"
+            >
+              {['en', 'id'].map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => toggleLanguage(lang)}
+                  className={`w-full px-4 py-2 text-sm flex items-center justify-between transition ${
+                    currentLang === lang
+                      ? 'bg-purple-600 text-white'
+                      : 'text-gray-300 hover:bg-purple-700'
+                  }`}
+                >
+                  {lang === 'en' ? 'English' : 'Indonesia'}
+                  {currentLang === lang && <FiCheck className="ml-1" />}
+                </button>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Scroll Arrow */}
