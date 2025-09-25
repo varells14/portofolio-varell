@@ -171,14 +171,7 @@ const rotation = wobble
         </div>
       </motion.div>
 
-      {/* TOOLTIP */}
-      {showTooltip && (
-        <figcaption
-          className="absolute left-0 top-0 rounded bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] z-[3] hidden sm:block"
-        >
-          {captionText}
-        </figcaption>
-      )}
+      
     </figure>
   );
 }
