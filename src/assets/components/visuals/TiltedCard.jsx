@@ -1,11 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
-
-const springValues = {
-  damping: 30,
-  stiffness: 100,
-  mass: 2,
-};
+import { motion } from "framer-motion";
 
 export default function TiltedCard({
   imageSrc,
@@ -15,26 +9,12 @@ export default function TiltedCard({
   containerWidth = "100%",
   imageHeight = "300px",
   imageWidth = "300px",
-  scaleOnHover = 1.05,
-  rotateAmplitude = 12,
-  showMobileWarning = false,
   showTooltip = false,
 }) {
   const ref = useRef(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const rotateX = useSpring(useMotionValue(0), springValues);
-  const rotateY = useSpring(useMotionValue(0), springValues);
-  const scale = useSpring(1, springValues);
-  const opacity = useSpring(0);
-  const rotateFigcaption = useSpring(0, {
-    stiffness: 350,
-    damping: 30,
-    mass: 1,
-  });
 
-  const [lastY, setLastY] = useState(0);
-  const [flipped, setFlipped] = useState(false);
+  const [flipped, setFlipped] = useState(false); // false = foto, true = teks
+  const [wobble, setWobble] = useState(false); // animasi goyang
 
   // =========================
   // CODE WITH SYNTAX COLORS
@@ -52,9 +32,7 @@ export default function TiltedCard({
       { text: " = ", className: "text-gray-200" },
       { text: '"Varell";', className: "text-green-400" },
     ],
-    [
-      { text: '"Have a great day! :))"', className: "text-yellow-400" },
-    ],
+    [{ text: '"Have a great day! :))"', className: "text-yellow-400" }],
   ];
 
   const [displayedLines, setDisplayedLines] = useState([[], [], []]);
@@ -90,40 +68,46 @@ export default function TiltedCard({
               newLines[lineIndex] = tokens;
               return newLines;
             });
-            setCharIndex(charIndex + 1);
+            setCharIndex((c) => c + 1);
           }, 50);
           return () => clearTimeout(timeout);
         } else {
           setCharIndex(0);
-          setTokenIndex(tokenIndex + 1);
+          setTokenIndex((t) => t + 1);
         }
       } else {
         setTokenIndex(0);
-        setLineIndex(lineIndex + 1);
+        setLineIndex((l) => l + 1);
       }
     }
   }, [flipped, lineIndex, tokenIndex, charIndex]);
 
   // =========================
-  // AUTO FLIP - FOTO 2 DETIK, TEKS 7 DETIK
-  // =========================
-  useEffect(() => {
-    let timeout;
-    
-    if (flipped) {
-      // Jika sedang menampilkan teks (flipped = true), tunggu 7 detik
-      timeout = setTimeout(() => {
-        setFlipped(false);
-      }, 7000);
-    } else {
-      // Jika sedang menampilkan foto (flipped = false), tunggu 2 detik
-      timeout = setTimeout(() => {
-        setFlipped(true);
-      }, 2000);
-    }
-    
-    return () => clearTimeout(timeout);
-  }, [flipped]);
+// AUTO FLIP + WOBBLE
+// =========================
+useEffect(() => {
+  const timeout = setTimeout(() => {
+    setWobble(true);
+    setTimeout(() => {
+      setFlipped((f) => !f);
+      setWobble(false);
+    }, 1500); // lebih lama supaya wobble 2x masuk
+  }, flipped ? 4000 : 1500);
+
+  return () => clearTimeout(timeout);
+}, [flipped]);
+
+// =========================
+// FIXED ROTATION
+// =========================
+const rotation = wobble
+  ? flipped
+    ? [180, 210, 150, 195, 165, 185, 175, 180] // teks side wobble lebih "mau kebalik"
+    : [0, 25, -25, 18, -18, 10, -10, 0]        // foto side wobble lebih jauh
+  : flipped
+  ? 180
+  : 0;
+
 
   // =========================
   // RENDER
@@ -131,39 +115,30 @@ export default function TiltedCard({
   return (
     <figure
       ref={ref}
-      className="relative w-full h-full [perspective:1200px] flex flex-col items-center justify-center"
-      style={{
-        height: containerHeight,
-        width: containerWidth,
-      }}
+      className="relative w-full h-full flex flex-col items-center justify-center [perspective:1200px]"
+      style={{ height: containerHeight, width: containerWidth }}
     >
       {/* CARD WRAPPER */}
       <motion.div
         className="relative w-full h-full [transform-style:preserve-3d]"
-        animate={{ rotateY: flipped ? 180 : 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
-        style={{
-          width: imageWidth,
-          height: imageHeight,
-        }}
+        animate={{ rotateY: rotation }}
+        transition={{ duration: wobble ? 4 : 1, ease: "easeInOut" }}
+        style={{ width: imageWidth, height: imageHeight }}
       >
         {/* FRONT */}
-        <motion.div
-          className="absolute w-full h-full backface-hidden rounded-[15px] overflow-hidden"
-          style={{ rotateY: 0 }}
-        >
-          <motion.img
+        <div className="absolute w-full h-full backface-hidden rounded-[15px] overflow-hidden">
+          <img
             src={imageSrc}
             alt={altText}
             className="w-full h-full object-cover rounded-[15px]"
           />
-        </motion.div>
+        </div>
 
         {/* BACK */}
-        <motion.div
+        <div
           className="absolute w-full h-full flex flex-col rounded-[15px] backface-hidden 
-             bg-[#1e1e2e] text-gray-200 border border-gray-700 shadow-xl overflow-hidden"
-          style={{ rotateY: 180 }}
+            bg-[#1e1e2e] text-gray-200 border border-gray-700 shadow-xl overflow-hidden"
+          style={{ transform: "rotateY(180deg)" }}
         >
           {/* Header VSCode style */}
           <div className="flex items-center justify-between px-3 py-2 bg-[#2d2d3a] text-sm text-gray-400 border-b border-gray-700">
@@ -175,7 +150,7 @@ export default function TiltedCard({
             />
           </div>
 
-          {/* Code area with syntax highlight + typing */}
+          {/* Code area */}
           <div className="flex-1 flex flex-col font-mono text-sm leading-relaxed px-2 py-2">
             {displayedLines.map((line, i) => (
               <div key={i} className="flex">
@@ -193,22 +168,16 @@ export default function TiltedCard({
               </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </motion.div>
 
       {/* TOOLTIP */}
       {showTooltip && (
-        <motion.figcaption
-          className="pointer-events-none absolute left-0 top-0 rounded bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] opacity-0 z-[3] hidden sm:block"
-          style={{
-            x,
-            y,
-            opacity,
-            rotate: rotateFigcaption,
-          }}
+        <figcaption
+          className="absolute left-0 top-0 rounded bg-white px-[10px] py-[4px] text-[10px] text-[#2d2d2d] z-[3] hidden sm:block"
         >
           {captionText}
-        </motion.figcaption>
+        </figcaption>
       )}
     </figure>
   );
