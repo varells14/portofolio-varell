@@ -1,37 +1,15 @@
-// ProjectsSection.jsx
 'use client';
 
-import { useState, useMemo } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useMemo, useRef } from 'react';
+import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const headingVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-};
-
-const projectsGridVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.05,
-    },
-  },
-};
-
-const categoryButtonVariants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-};
-
-function ProjectsSection() {
+const ProjectsSection = () => {
   const { t } = useTranslation('projects');
   const [activeCategory, setActiveCategory] = useState('all');
+  const carouselRef = useRef(null);
 
   const allProjects = useMemo(
     () => [
@@ -49,88 +27,105 @@ function ProjectsSection() {
         liveSiteLink: 'https://maestroapps.my.id/login',
         category: 'fullstack',
       },
+      {
+        id: 'filmPage',
+        imageSrc: './images/project2.webp',
+        techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
+        liveSiteLink: 'https://maestroapps.my.id/login',
+        category: 'fullstack',
+      },
     ],
     []
   );
-
-  const handleCategoryClick = (category) => setActiveCategory(category);
 
   const filteredProjects = useMemo(
     () => (activeCategory === 'all' ? allProjects : allProjects.filter((p) => p.category === activeCategory)),
     [activeCategory, allProjects]
   );
 
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      const cardWidth = carouselRef.current.firstChild.offsetWidth + 16; // margin gap
+      carouselRef.current.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      const cardWidth = carouselRef.current.firstChild.offsetWidth + 16;
+      carouselRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <motion.section
-      id="projects"
-      className="relative z-10 lg:px-20 md:px-16 px-10 py-15"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <section id="projects" className="relative z-10 lg:px-20 md:px-16 px-10 py-15">
       <div className="max-w-7xl mx-auto font-poppins text-center">
-        <motion.h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-4" variants={headingVariants}>
+        <h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text mb-4">
           {t('title')}
-        </motion.h1>
-        <motion.div variants={headingVariants}>
-          <p className="text-[20px] text-gray-100 mb-8 max-w-2xl mx-auto">{t('description')}</p>
+        </h1>
+        <p className="text-[20px] text-gray-100 mb-8 max-w-2xl mx-auto">{t('description')}</p>
 
-          <motion.div className="flex flex-wrap justify-center gap-4 mb-12" variants={categoryButtonVariants}>
-            <button
-              onClick={() => handleCategoryClick('all')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
-                ${activeCategory === 'all' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
-            >
-              {t('categories.all')}
-            </button>
-          </motion.div>
-        </motion.div>
-
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={activeCategory}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-5"
-            variants={projectsGridVariants}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
+        <div className="flex flex-wrap justify-center gap-4 mb-6">
+          <button
+            onClick={() => setActiveCategory('all')}
+            className={`px-6 py-2 rounded-full font-semibold transition-all duration-300
+              ${activeCategory === 'all' ? 'bg-purple-700 text-white shadow-md' : 'bg-transparent border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white'}`}
           >
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map((project) => (
+            {t('categories.all')}
+          </button>
+        </div>
+
+        <div className="relative">
+          {/* Arrow Left */}
+          <button
+            onClick={scrollLeft}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-purple-700 hover:bg-purple-600 text-white p-3 rounded-full shadow-md hidden md:flex"
+          >
+            <FaArrowLeft />
+          </button>
+
+          {/* Carousel */}
+          <div
+            ref={carouselRef}
+            className="flex overflow-x-auto gap-4 scroll-smooth pb-4 md:pb-0 no-scrollbar"
+          >
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="flex-shrink-0 w-[90%] md:w-[45%] snap-start"
+              >
                 <ProjectCard
-                  key={project.id}
                   project={{
                     ...project,
                     title: t(`projects_content.${project.id}.title`),
                     description: t(`projects_content.${project.id}.description`),
                   }}
                 />
-              ))
-            ) : (
-              <motion.p
-                key="no-projects-message"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="text-gray-400 text-lg col-span-full py-10"
-              >
-                No projects found in this category.
-              </motion.p>
-            )}
-          </motion.div>
-        </AnimatePresence>
+              </div>
+            ))}
+          </div>
+
+          {/* Arrow Right */}
+          <button
+            onClick={scrollRight}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-purple-700 hover:bg-purple-600 text-white p-3 rounded-full shadow-md hidden md:flex"
+          >
+            <FaArrowRight />
+          </button>
+        </div>
       </div>
 
-      <GradientCircle
-        size="w-[520px] h-[520px]"
-        colors={['#A428FD', '#6401AC', '#3B0264']}
-        opacity={0.25}
-        blur="blur-2xl"
-        className="absolute top-[-10rem] right-[-10rem] will-change-transform"
-        animationDuration={10}
-      />
-    </motion.section>
+      <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </section>
   );
-}
+};
 
 export default ProjectsSection;
