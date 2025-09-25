@@ -5,7 +5,7 @@ import GradientBackground from '../../visuals/GradientBackground';
 import GradientCircle from '../../visuals/GradientCircle';
 import { useTranslation } from 'react-i18next';
 
-function TechStackSection() {
+export default function TechStackSection() {
   const { t } = useTranslation('techstack');
   const [isMobile, setIsMobile] = useState(false);
 
@@ -34,15 +34,13 @@ function TechStackSection() {
     { src: './images/vite.png', name: 'Vite' },
   ];
 
-  // Duplikasi untuk marquee
-  const marqueeItems = [...techStackItems, ...techStackItems];
+  // Duplikasi 3x supaya seamless
+  const marqueeItems = [...techStackItems, ...techStackItems, ...techStackItems];
 
-  // Animation speed
-  const duration = isMobile ? 12 : 20;
+  const duration = isMobile ? 15 : 30;
 
   return (
     <section id="tech" className="relative z-10 lg:px-20 md:px-16 px-10 py-15 overflow-hidden">
-      {/* Header */}
       <div className="text-center font-poppins mb-10">
         <h1 className="md:text-[60px] text-[50px] font-bold text-purple-700 animated-gradient-text">
           {t('header')}
@@ -50,20 +48,15 @@ function TechStackSection() {
         <p className="text-[20px] text-gray-100">{t('paragraph')}</p>
       </div>
 
-      {/* Horizontal scroll container */}
       <div className="w-full overflow-hidden">
         <div
-          className="flex space-x-4 md:space-x-6 animate-marquee"
-          style={{
-            animation: `marquee ${duration}s linear infinite`,
-          }}
+          className="flex space-x-4 md:space-x-6 marquee-container"
+          style={{ width: 'max-content', animation: `marquee ${duration}s linear infinite` }}
         >
-          {marqueeItems.map((item, index) => (
+          {marqueeItems.map((item, idx) => (
             <div
-              key={index}
-              className={`flex flex-col items-center justify-center min-w-[5rem] ${
-                isMobile ? 'md:min-w-[6rem]' : 'md:min-w-[7rem]'
-              } hover:scale-105 transition-transform duration-300`}
+              key={idx}
+              className="flex flex-col items-center justify-center min-w-[5rem] md:min-w-[7rem] hover:scale-105 transition-transform duration-300"
             >
               <GradientBackground>
                 <img
@@ -72,15 +65,12 @@ function TechStackSection() {
                   className="w-16 h-16 md:w-28 md:h-28 p-3 md:p-5 rounded-xl bg-[#1D042F]"
                 />
               </GradientBackground>
-              <p className="text-gray-300 mt-2 text-center text-xs md:text-sm">
-                {item.name}
-              </p>
+              <p className="text-gray-300 mt-2 text-center text-xs md:text-sm">{item.name}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Gradient circle */}
       <GradientCircle
         size="w-[390px] h-[700px]"
         colors={['#A428FD', '#6401AC', '#3B0264']}
@@ -90,15 +80,15 @@ function TechStackSection() {
         animationDuration={10}
       />
 
-      {/* CSS keyframe marquee */}
       <style jsx>{`
+        .marquee-container {
+          display: flex;
+        }
         @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
         }
       `}</style>
     </section>
   );
 }
-
-export default TechStackSection;
