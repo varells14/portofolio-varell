@@ -31,7 +31,7 @@ const ProjectsSection = () => {
         id: 'quotation',
         imageSrc: './images/project3.webp',
         techIcons: ['./images/php.png', './images/laravel.png', './images/tailwind.png', './images/javascript.png', './images/mysql.png', './images/cpanel.png'],
-        liveSiteLink: 'https://maestroapps.my.id/login',
+        liveSiteLink: 'https://quot.logisteed.id/login',
         category: 'fullstack',
       },
     ],

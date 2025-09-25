@@ -7,16 +7,17 @@
   "no_project": "No projects found in this category.",
   "projects_content": {
     "procurement": {
-      "title": "Procurement System",
-      "description": "A real-time purchasing application with approval workflows to streamline procurement requests."
-    },
-    "inventory": {
-      "title": "Inventory Material Request System",
-      "description": "A real-time inventory request system with integrated approval flow for efficient material management."
-    },
-    "quotation": {
-      "title": "Inventory Material Request System",
-      "description": "A real-time inventory request system with integrated approval flow for efficient material management."
-    }
+  "title": "Procurement System",
+  "description": "Faster purchasing process, real-time updates, with a transparent approval workflow."
+},
+"inventory": {
+  "title": "Material Request System",
+  "description": "Dynamic material requests and approvals managed with full control."
+},
+"quotation": {
+  "title": "Quotation Management System",
+  "description": "Real-time quotation tracking per PIC for more effective collaboration."
+}
+
   }
 }

@@ -9,13 +9,18 @@
   },
   "no_project": "Tidak ada proyek dalam kategori ini.",
   "projects_content": {
-    "rinema": {
-      "title": "Procurement System",
-      "description": "Aplikasi pembelian real-time dengan alur kerja persetujuan untuk mempermudah permintaan pengadaan."
-    },
-    "filmPage": {
-      "title": "Inventory Material Request System",
-      "description": "Sistem permintaan persediaan real-time dengan alur persetujuan terintegrasi untuk pengelolaan material yang efisien."
-    }
+    "procurement": {
+  "title": "Sistem Procurement",
+  "description": "Proses pembelian lebih cepat, real-time, dengan alur persetujuan yang transparan."
+},
+"inventory": {
+  "title": "Sistem Permintaan Material",
+  "description": "Permintaan dan persetujuan material dikelola dinamis dengan kontrol penuh."
+},
+"quotation": {
+  "title": "Sistem Manajemen Quotation",
+  "description": "Pelacakan status quotation per PIC secara real-time untuk kolaborasi lebih efektif."
+}
+
   }
 }
