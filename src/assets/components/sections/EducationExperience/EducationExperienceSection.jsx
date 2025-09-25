@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import EducationItem from './EducationItem';
 import ExperienceItem from './ExperienceItem';
@@ -14,11 +14,23 @@ const fadeInScale = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
+// Staggered container untuk Experience/Education
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
 const EducationExperienceSection = () => {
   const { t } = useTranslation('education-experience');
-  const educationItems = t('education', { returnObjects: true });
-  const experienceItems = t('experience', { returnObjects: true });
-  const skills = t('skills', { returnObjects: true });
+
+  // Gunakan useMemo untuk mencegah re-render
+  const educationItems = useMemo(() => t('education', { returnObjects: true }), [t]);
+  const experienceItems = useMemo(() => t('experience', { returnObjects: true }), [t]);
+  const skills = useMemo(() => t('skills', { returnObjects: true }), [t]);
 
   return (
     <section id="education-experience-skills" className="relative z-10 px-6 md:px-16 lg:px-20 py-10 text-white font-poppins">
@@ -27,16 +39,16 @@ const EducationExperienceSection = () => {
         size="w-[390px] h-[700px]"
         colors={['#A428FD', '#6401AC', '#3B0264']}
         opacity={0.25}
-        blur="blur-3xl"
-        className="absolute top-0 right-[-15rem]"
+        blur="blur-2xl" // kurangi blur
+        className="absolute top-0 right-[-15rem] will-change-transform"
         animationDuration={12}
       />
       <GradientCircle
         size="w-[390px] h-[580px]"
         colors={['#A428FD', '#6401AC', '#3B0264']}
         opacity={0.2}
-        blur="blur-3xl"
-        className="absolute bottom-[5rem] left-[15rem]"
+        blur="blur-2xl"
+        className="absolute bottom-[5rem] left-[15rem] will-change-transform"
         animationDuration={12}
       />
 
@@ -50,43 +62,43 @@ const EducationExperienceSection = () => {
         <motion.h3 className="text-4xl md:text-5xl font-bold mb-8 text-left animated-gradient-text" variants={fadeInScale}>
           {t('experienceTitle')}
         </motion.h3>
-        <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1 space-y-8">
+        <motion.div className="relative border-l-2 border-gray-700 ml-6 md:ml-1 space-y-8" variants={containerVariants}>
           {experienceItems.map((item, index) => (
             <motion.div key={index} variants={fadeInScale}>
               <ExperienceItem {...item} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Education */}
         <motion.h3 className="text-4xl md:text-5xl font-bold my-8 text-left animated-gradient-text" variants={fadeInScale}>
           {t('educationTitle')}
         </motion.h3>
-        <div className="relative border-l-2 border-gray-700 ml-6 md:ml-1 space-y-8">
+        <motion.div className="relative border-l-2 border-gray-700 ml-6 md:ml-1 space-y-8" variants={containerVariants}>
           {educationItems.map((item, index) => (
             <motion.div key={index} variants={fadeInScale}>
               <EducationItem {...item} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Skills */}
         <motion.h3 className="text-4xl md:text-5xl font-bold text-purple-500 mb-8 text-center" variants={fadeInScale}>
           {t('skillsTitle')}
         </motion.h3>
-        <div className="flex flex-wrap justify-center gap-4">
+        <motion.div className="flex flex-wrap justify-center gap-4" variants={containerVariants}>
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               variants={fadeInScale}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
-              className="p-3 bg-[#1D042F] rounded-lg shadow-md border border-purple-700"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="p-3 bg-[#1D042F] rounded-lg shadow-md border border-purple-700 will-change-transform"
             >
               <SkillItem skill={skill} />
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
