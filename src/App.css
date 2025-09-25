@@ -22,3 +22,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+html, body, #root {
+  background-color: #000; /* biar default hitam */
+  margin: 0;
+  padding: 0;
+}

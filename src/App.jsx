@@ -1,3 +1,5 @@
+import { useState } from "react";
+import SplashLoader from './assets/components/ui/SplashLoader';
 import ScrollProgressBar from './assets/components/ui/ScrollProgressBar';
 import ScrollIndicator from './assets/components/ui/ScrollIndicator';
 import './App.css';
@@ -11,21 +13,29 @@ import EducationExperienceSection from './assets/components/sections/EducationEx
 import ContactSection from './assets/components/sections/Contact/ContactSection';
 
 function App() {
+  const [showSplash, setShowSplash] = useState(true);
+
   return (
-    <div>
-      <FloatingNavbar />
-      <div className="relative min-h-screen overflow-hidden">
-        <Background />
-        <HeroSection />
-        <AboutSection />
-        <EducationExperienceSection />
-        <TechStackSection />
-        <ProjectsSection />
-        <ContactSection />
-      </div>
-      <ScrollProgressBar />
-      <ScrollIndicator />
-    </div>
+    <>
+      {showSplash ? (
+        <SplashLoader onFinish={() => setShowSplash(false)} />
+      ) : (
+        <div>
+          <FloatingNavbar />
+          <div className="relative min-h-screen overflow-hidden">
+            <Background />
+            <HeroSection />
+            <AboutSection />
+            <EducationExperienceSection />
+            <TechStackSection />
+            <ProjectsSection />
+            <ContactSection />
+          </div>
+          <ScrollProgressBar />
+          <ScrollIndicator />
+        </div>
+      )}
+    </>
   );
 }
 
