@@ -2,6 +2,7 @@
   "educationTitle": "Pendidikan",
   "experienceTitle": "Pengalaman",
   "skillsTitle": "Keahlian",
+  "certificatesTitle": "Sertifikat",
   "education": [
     {
       "logo": "https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/14/143687_logo_unikom.png",
@@ -61,6 +62,33 @@
   "IT Support",
   "Network Administration",
   "Web Development"
+],
+"certificates": [
+  {
+    "title": "Dasar-dasar Jaringan (Cisco)",
+    "issuer": "Cisco Networking Academy",
+    "year": "2023",
+    "image": "/images/sertifikatcisco.jpg"
+  },
+  {
+    "title": "Pengembang Web (BNSP)",
+    "issuer": "Badan Nasional Sertifikasi Profesi",
+    "year": "2023",
+    "image": "/images/sertifikatbnsp.jpg"
+  },
+  {
+    "title": "Pengembangan Web Laravel",
+    "issuer": "Eduwork",
+    "year": "2023",
+    "image": "/images/sertifikatlaravel.jpg"
+  },
+  {
+    "title": "Pemrograman PHP",
+    "issuer": "LKP DUTA",
+    "year": "2024",
+    "image": "/images/sertifikatphp.jpg"
+  }
 ]
+
 
 }

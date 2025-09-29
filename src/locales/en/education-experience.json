@@ -2,6 +2,7 @@
   "educationTitle": "Education",
   "experienceTitle": "Experience",
   "skillsTitle": "Skills",
+  "certificatesTitle": "Certificates",
   "education": [
     {
       "logo": "https://keystoneacademic-res.cloudinary.com/image/upload/c_pad,w_640,h_304/dpr_auto/f_auto/q_auto/v1/element/14/143687_logo_unikom.png",
@@ -43,6 +44,16 @@
         "Managed corporate network infrastructure and enforced bandwidth policies for all connected devices.",
         "Configured Active Directory and DHCP services."
       ]
+    },
+    {
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rn_clOvaBhnKD0tUcec3xN3P6oNPw9xa_w&s",
+      "company": "PT. Arga Kirana Utama",
+      "position": "IT Staff",
+      "period": "February 2023 - December 2022",
+      "responsibilities": [
+        "Developed web-based Inventory System.",
+        "Create a web-based company profile."
+      ]
     }
   ],
   "skills": [
@@ -61,6 +72,33 @@
   "IT Support",
   "Network Administration",
   "Web Development"
+],
+"certificates": [
+    {
+      "title": "Networking Fundamentals (Cisco)",
+      "issuer": "Cisco Networking Academy",
+      "year": "2023",
+      "image": "/images/sertifikatcisco.jpg"
+    },
+    {
+      "title": "Web Developer (BNSP)",
+      "issuer": "National Professional Certification Agency ",
+      "year": "2023",
+      "image": "/images/sertifikatbnsp.jpg"
+    },
+    {
+      "title": "Laravel Web Development",
+      "issuer": "Eduwork",
+      "year": "2023",
+      "image": "/images/sertifikatlaravel.jpg"
+    },
+    {
+      "title": "PHP Programmer",
+      "issuer": "LKP DUTA",
+      "year": "2024",
+      "image": "/images/sertifikatphp.jpg"
+    }
 ]
+
 
 }

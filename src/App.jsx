@@ -10,6 +10,7 @@ import ProjectsSection from './assets/components/sections/Projects/ProjectsSecti
 import FloatingNavbar from './assets/components/ui/FloatingNavbar';
 import AboutSection from './assets/components/sections/About/AboutSection';
 import EducationExperienceSection from './assets/components/sections/EducationExperience/EducationExperienceSection';
+import CertificateSection from './assets/components/sections/EducationExperience/CertificateSection'; 
 import ContactSection from './assets/components/sections/Contact/ContactSection';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <HeroSection />
             <AboutSection />
             <EducationExperienceSection />
+             <CertificateSection />   {/* ⬅️ panggil di sini */}
             <TechStackSection />
             <ProjectsSection />
             <ContactSection />

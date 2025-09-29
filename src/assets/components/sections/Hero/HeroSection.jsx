@@ -58,7 +58,7 @@ function HeroSection() {
             <motion.a
               href="/images/varell.pdf"
               download="varell.pdf"
-              className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white"
+              className="px-4 py-2 rounded-full bg-transparent font-bold transition-all border-2 border-purple-700 text-white hover:bg-purple-700 hover:text-white"
               variants={fadeInUpVariants}
             >
               Download CV
