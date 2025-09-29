@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 const sections = [
   { id: 'home', label: 'Home' },
+  { id: "home-text", label: "Intro" }, 
   { id: 'about', label: 'About' },
   { id: 'education-experience-skills', label: 'Education & Experience' },
   { id: 'certificates', label: 'certificates' },
@@ -56,22 +57,12 @@ const ScrollIndicator = () => {
   };
 
   const handleClick = () => {
-  if (activeIndex === 0) {
-    // Kalau masih di home, scroll ke teks "I Web Developer"
-    const textElement = document.getElementById("home-text");
-    if (textElement) {
-      textElement.scrollIntoView({ behavior: "smooth", block: "start" });
-      return;
+    if (activeIndex < sections.length - 1) {
+      scrollToSection(activeIndex + 1);
+    } else {
+      scrollToSection(0);
     }
-  }
-
-  // Normal flow ke section berikutnya
-  if (activeIndex < sections.length - 1) {
-    scrollToSection(activeIndex + 1);
-  } else {
-    scrollToSection(0);
-  }
-};
+  };
 
   const toggleLanguage = (lang) => {
     i18n.changeLanguage(lang);
