@@ -8,10 +8,13 @@ import { useTranslation } from 'react-i18next';
 const sections = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
+  { id: 'education-experience-skills', label: 'Education & Experience' },
+  { id: 'certificates', label: 'certificates' },
   { id: 'tech', label: 'Tech' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ];
+
 
 const ScrollIndicator = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -53,12 +56,22 @@ const ScrollIndicator = () => {
   };
 
   const handleClick = () => {
-    if (activeIndex < sections.length - 1) {
-      scrollToSection(activeIndex + 1);
-    } else {
-      scrollToSection(0);
+  if (activeIndex === 0) {
+    // Kalau masih di home, scroll ke teks "I Web Developer"
+    const textElement = document.getElementById("home-text");
+    if (textElement) {
+      textElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
     }
-  };
+  }
+
+  // Normal flow ke section berikutnya
+  if (activeIndex < sections.length - 1) {
+    scrollToSection(activeIndex + 1);
+  } else {
+    scrollToSection(0);
+  }
+};
 
   const toggleLanguage = (lang) => {
     i18n.changeLanguage(lang);
@@ -82,42 +95,44 @@ const ScrollIndicator = () => {
       </div>
 
       {/* Mobile: Globe Button */}
-      <div className="md:hidden relative">
-        <motion.button
-          onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="flex items-center justify-center p-3 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg"
-        >
-          <FiGlobe size={24} />
-        </motion.button>
+<div className="md:hidden relative">
+  <motion.button
+    onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex items-center justify-center p-3 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-lg"
+  >
+    <FiGlobe size={24} />
+  </motion.button>
 
-        <AnimatePresence>
-          {isLangDropdownOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              className="absolute bottom-full mb-2 w-32 right-1/2 translate-x-1/2 bg-[#1B002F]/95 border border-purple-600 rounded-xl shadow-lg overflow-hidden backdrop-blur-sm"
-            >
-              {['en', 'id'].map((lang) => (
-                <button
-                  key={lang}
-                  onClick={() => toggleLanguage(lang)}
-                  className={`w-full px-4 py-2 text-sm flex items-center justify-between transition ${
-                    currentLang === lang
-                      ? 'bg-purple-600 text-white'
-                      : 'text-gray-300 hover:bg-purple-700'
-                  }`}
-                >
-                  {lang === 'en' ? 'English' : 'Indonesia'}
-                  {currentLang === lang && <FiCheck className="ml-1" />}
-                </button>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+  <AnimatePresence>
+    {isLangDropdownOpen && (
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 20 }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className="absolute right-full mr-3 top-1/2 -translate-y-1/2 flex flex-col gap-2 bg-[#1B002F]/95 border border-purple-600 rounded-xl shadow-lg p-2 backdrop-blur-sm"
+      >
+        {['en', 'id'].map((lang) => (
+          <button
+            key={lang}
+            onClick={() => toggleLanguage(lang)}
+            className={`px-4 py-2 text-sm rounded-lg flex items-center justify-between transition ${
+              currentLang === lang
+                ? 'bg-purple-600 text-white'
+                : 'text-gray-300 hover:bg-purple-700'
+            }`}
+          >
+            {lang === 'en' ? 'English' : 'Indonesia'}
+            {currentLang === lang && <FiCheck className="ml-2" />}
+          </button>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
       {/* Scroll Arrow */}
       {activeIndex < sections.length - 1 ? (

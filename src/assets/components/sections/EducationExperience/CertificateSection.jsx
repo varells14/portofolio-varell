@@ -19,7 +19,9 @@ export default function CertificateSection() {
   const duration = 25; // makin kecil makin cepat
 
   return (
-    <section className="py-16 px-6 text-white relative overflow-hidden">
+    
+    <section id="certificates"
+    className="py-16 px-6 text-white relative overflow-hidden">
       {/* Title */}
       <h1 className="text-4xl font-bold text-center mb-12 animated-gradient-text opacity-0 translate-y-[-20px] animate-fadeInUp">
         {t('certificatesTitle')}

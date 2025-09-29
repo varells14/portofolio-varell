@@ -43,6 +43,7 @@ function HeroSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
           >
+            <div id="home-text"></div>
             <motion.p className="md:text-[40px] text-[25px] text-gray-300 font-bold" variants={fadeInUpVariants}>
               {t('greet')}
             </motion.p>

@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Code2, User, Github, Globe } from "lucide-react"; // icon dari lucide-react
+import { Code2, User, Globe } from "lucide-react"; 
+import { FaReact } from "react-icons/fa";
 
 export default function SplashLoader({ onFinish }) {
   const [show, setShow] = useState(true);
@@ -53,7 +54,7 @@ export default function SplashLoader({ onFinish }) {
     >
       {/* ICONS */}
       <div className="flex space-x-6 mb-6">
-        {[Code2, User, Github].map((Icon, i) => (
+        {[Code2, User, FaReact].map((Icon, i) => (
           <motion.div
             key={i}
             custom={i}

@@ -28,7 +28,7 @@ function App() {
             <HeroSection />
             <AboutSection />
             <EducationExperienceSection />
-             <CertificateSection />   {/* ⬅️ panggil di sini */}
+             <CertificateSection /> 
             <TechStackSection />
             <ProjectsSection />
             <ContactSection />
