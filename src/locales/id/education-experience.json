@@ -22,15 +22,19 @@
     {
       "logo": "https://www.logisteed.com/assets/img/profile/img_policy_01.webp",
       "company": "PT. Berdiri Matahari Logistik (Logisteed)",
-      "position": "IT Officer",
+      "position": "IT Infrastructure & Software Engineer",
       "period": "Februari 2024 - Present",
       "responsibilities": [
-        "Membuat sistem HRIS dan Procurement berbasis web dengan alur persetujuan terintegrasi.",
-        "Mengelola aset dan infrastruktur IT.",
-        "Mengadministrasi server dan jaringan perusahaan.",
-        "Mengonfigurasi layanan Active Directory dan DHCP.",
-        "Mengonfigurasi folder bersama dengan pengaturan akses."
-      ]
+        "Mengembangkan dan memelihara sistem HRIS dan Procurement berbasis web dengan alur persetujuan terintegrasi.",
+  "Mengelola infrastruktur IT di berbagai lokasi operasional untuk memastikan dukungan yang stabil bagi sistem logistik dan pergudangan.",
+  "Merancang dan mengimplementasikan topologi jaringan sesuai kebutuhan tiap lokasi serta mendukung kelangsungan bisnis.",
+  "Memastikan ketersediaan dan keamanan layanan inti seperti email server, file sharing, koneksi internet, dan akses VPN.",
+  "Mengadministrasi dan memelihara firewall FortiGate untuk keamanan jaringan, segmentasi, dan konfigurasi VPN.",
+  "Mengonfigurasi dan mengelola Active Directory, DHCP, serta folder bersama dengan pengaturan akses yang sesuai.",
+  "Menangani troubleshooting hardware, pemeliharaan jaringan, dan pengelolaan aset IT secara menyeluruh.",
+  "Memberikan dukungan IT 24/7 untuk menjaga kelancaran aktivitas operasional tanpa gangguan.",
+  "Menyiapkan dokumentasi teknis dan laporan untuk kebutuhan audit, kepatuhan, dan evaluasi manajemen."
+]
     },
     {
       "logo": "https://media.licdn.com/dms/image/v2/C560BAQEiWki2bWPvRQ/company-logo_200_200/company-logo_200_200/0/1679380752392?e=2147483647&v=beta&t=VpbWOJAoGTKhil5iXRttIVu9wICl2IEKnyRN8NCrrtU",
@@ -38,12 +42,12 @@
       "position": "IT Staff",
       "period": "January 2023 - January 2024",
       "responsibilities": [
-        "Membuat sistem operasi broker berbasis web yang terintegrasi.",
-        "Mengelola peralatan IT, baik perangkat keras maupun perangkat lunak.",
-        "Mengonfigurasi folder bersama dengan pengaturan akses.",
-        "Mengelola infrastruktur jaringan perusahaan dan menerapkan kebijakan bandwidth untuk seluruh perangkat terhubung.",
-        "Mengonfigurasi layanan Active Directory dan DHCP."
-      ]
+        "Mengembangkan dan memelihara sistem Operasional Broker berbasis web yang terintegrasi untuk digitalisasi dan efisiensi alur kerja brokerage.",
+  "Mengelola dan memelihara peralatan IT, termasuk hardware, software, dan perangkat periferal.",
+  "Mengonfigurasi dan mengelola folder bersama dengan kontrol akses berbasis peran untuk memastikan keamanan berbagi data internal.",
+  "Mengadministrasi infrastruktur jaringan perusahaan, memastikan konektivitas yang stabil serta menerapkan kebijakan manajemen bandwidth.",
+  "Mengonfigurasi dan memelihara layanan Active Directory dan DHCP untuk autentikasi terpusat dan pengelolaan alamat IP."
+]
     },
     {
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rn_clOvaBhnKD0tUcec3xN3P6oNPw9xa_w&s",
@@ -51,9 +55,9 @@
       "position": "IT Staff",
       "period": "February 2022 - December 2022",
       "responsibilities": [
-        "Developed web-based Inventory System.",
-        "Create a web-based company profile."
-      ]
+         "Mengembangkan Sistem Inventory berbasis web.",
+  "Membuat company profile perusahaan berbasis web."
+]
     }
   ],
   "skills": [
