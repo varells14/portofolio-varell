@@ -22,20 +22,15 @@
     {
       "logo": "https://www.logisteed.com/assets/img/profile/img_policy_01.webp",
       "company": "PT. Berdiri Matahari Logistik (Logisteed)",
-      "position": "IT Infrastructure & Software Engineer",
+      "position": "IT Officer",
       "period": "Februari 2024 - Present",
       "responsibilities": [
-  "Mengembangkan dan memelihara sistem HRIS dan Procurement berbasis web dengan alur persetujuan terintegrasi untuk meningkatkan efisiensi proses internal.",
-  "Mengelola dan memelihara infrastruktur IT di berbagai lokasi operasional dan gudang untuk mendukung sistem logistik dan pergudangan.",
-  "Merancang dan mengimplementasikan topologi jaringan sesuai kebutuhan lokasi dan keberlangsungan operasional.",
-  "Memastikan ketersediaan, stabilitas, dan keamanan layanan penting seperti server email, file sharing, koneksi internet, dan akses VPN.",
-  "Mengelola dan mengadministrasi firewall FortiGate untuk keamanan jaringan, segmentasi, dan konektivitas VPN.",
-  "Mengonfigurasi dan memelihara Active Directory, DHCP, serta folder bersama dengan pengaturan akses yang tepat.",
-  "Menangani troubleshooting perangkat keras, pemeliharaan jaringan, dan pengelolaan aset IT secara end-to-end.",
-  "Memberikan dukungan IT 24/7 untuk memastikan kelancaran operasional logistik dan pergudangan.",
-  "Menyusun dokumentasi teknis dan laporan untuk kebutuhan audit, kepatuhan, dan evaluasi manajemen."
-]
-
+        "Membuat sistem HRIS dan Procurement berbasis web dengan alur persetujuan terintegrasi.",
+        "Mengelola aset dan infrastruktur IT.",
+        "Mengadministrasi server dan jaringan perusahaan.",
+        "Mengonfigurasi layanan Active Directory dan DHCP.",
+        "Mengonfigurasi folder bersama dengan pengaturan akses."
+      ]
     },
     {
       "logo": "https://media.licdn.com/dms/image/v2/C560BAQEiWki2bWPvRQ/company-logo_200_200/company-logo_200_200/0/1679380752392?e=2147483647&v=beta&t=VpbWOJAoGTKhil5iXRttIVu9wICl2IEKnyRN8NCrrtU",
@@ -43,15 +38,22 @@
       "position": "IT Staff",
       "period": "January 2023 - January 2024",
       "responsibilities": [
-  "Mengembangkan dan memelihara sistem Broker Operation berbasis web yang terintegrasi untuk mendigitalisasi dan menyederhanakan alur kerja brokerage, termasuk pemrosesan transaksi, manajemen klien, dan automasi pelaporan.",
-  "Mengelola dan memelihara seluruh peralatan IT, termasuk perangkat keras, perangkat lunak, dan periferal di seluruh perusahaan.",
-  "Mengonfigurasi dan mengelola folder bersama dengan kontrol akses berbasis peran untuk memastikan keamanan berbagi data internal dan meningkatkan efisiensi kolaborasi.",
-  "Mengadministrasi dan memantau infrastruktur jaringan perusahaan, memastikan konektivitas yang stabil, menerapkan kebijakan manajemen bandwidth, dan mengoptimalkan performa jaringan secara keseluruhan.",
-  "Mengonfigurasi dan memelihara layanan Active Directory dan DHCP untuk autentikasi terpusat, manajemen alamat IP, dan pengendalian akses jaringan.",
-  "Melakukan troubleshooting perangkat keras, instalasi perangkat lunak, serta pemeliharaan preventif untuk menjaga kelancaran operasional IT dan mencegah gangguan sistem.",
-  "Memberikan dukungan teknis dan bantuan on-site kepada pengguna, menyelesaikan permasalahan IT harian, serta mengimplementasikan perbaikan berdasarkan kebutuhan operasional."
-]
-
+        "Membuat sistem operasi broker berbasis web yang terintegrasi.",
+        "Mengelola peralatan IT, baik perangkat keras maupun perangkat lunak.",
+        "Mengonfigurasi folder bersama dengan pengaturan akses.",
+        "Mengelola infrastruktur jaringan perusahaan dan menerapkan kebijakan bandwidth untuk seluruh perangkat terhubung.",
+        "Mengonfigurasi layanan Active Directory dan DHCP."
+      ]
+    },
+    {
+      "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rn_clOvaBhnKD0tUcec3xN3P6oNPw9xa_w&s",
+      "company": "PT. Arga Kirana Utama",
+      "position": "IT Staff",
+      "period": "February 2022 - December 2022",
+      "responsibilities": [
+        "Developed web-based Inventory System.",
+        "Create a web-based company profile."
+      ]
     }
   ],
   "skills": [

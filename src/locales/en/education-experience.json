@@ -22,20 +22,15 @@
     {
       "logo": "https://www.logisteed.com/assets/img/profile/img_policy_01.webp",
       "company": "PT. Berdiri Matahari Logistik (Logisteed)",
-      "position": "IT Infrastructure & Software Engineer",
+      "position": "IT Officer",
       "period": "Februari 2024 - Present",
       "responsibilities": [
-  "Developed and maintained web-based HRIS and Procurement systems with integrated approval workflows to streamline internal processes.",
-  "Managed and maintained IT infrastructure across multiple operational sites and warehouses to support logistics and warehouse systems.",
-  "Designed and implemented network topology tailored to site-specific requirements and business continuity.",
-  "Ensured availability, stability, and security of critical services such as email servers, file sharing, internet connectivity, and VPN access.",
-  "Administered and managed FortiGate firewalls for network security, segmentation, and VPN connectivity.",
-  "Configured and maintained Active Directory, DHCP, and shared folders with appropriate access controls.",
-  "Handled hardware troubleshooting, network maintenance, and complete IT asset management independently.",
-  "Provided 24/7 IT support to ensure uninterrupted logistics and warehouse operations.",
-  "Prepared technical documentation and reports for audits, compliance, and management evaluations."
-]
-
+        "Developed web-based HRIS and Procurement systems with integrated approval workflows.",
+        "Managed IT assets and infrastructure.",
+        "Administered servers and corporate networks.",
+        "Configured Active Directory and DHCP services.",
+        "Configured shared folders with access controls."
+      ]
     },
     {
       "logo": "https://media.licdn.com/dms/image/v2/C560BAQEiWki2bWPvRQ/company-logo_200_200/company-logo_200_200/0/1679380752392?e=2147483647&v=beta&t=VpbWOJAoGTKhil5iXRttIVu9wICl2IEKnyRN8NCrrtU",
@@ -43,21 +38,18 @@
       "position": "IT Staff",
       "period": "January 2023 - January 2024",
       "responsibilities": [
-  "Developed and maintained an integrated web-based Broker Operation System to digitalize and streamline brokerage workflows, including transaction processing, client management, and automated reporting.",
-  "Managed and maintained all IT equipment, including hardware, software, and peripherals across the organization.",
-  "Configured and managed shared folders with role-based access controls to secure internal data sharing and enhance collaboration efficiency.",
-  "Administered and monitored the corporate network infrastructure, ensuring stable connectivity, enforcing bandwidth management policies, and optimizing overall network performance.",
-  "Configured and maintained Active Directory and DHCP services for centralized authentication, IP address management, and secure network access control.",
-  "Performed hardware troubleshooting, software installation, and preventive maintenance to ensure smooth IT operations and minimize system downtime.",
-  "Provided technical support and on-site assistance to users, resolving daily IT issues and implementing improvements based on operational requirements."
-]
-
+        "Developed integrated web-based broker operation system.",
+        "Manage IT Equiment Hardware software.",
+        "Configured shared folders with access controls.",
+        "Managed corporate network infrastructure and enforced bandwidth policies for all connected devices.",
+        "Configured Active Directory and DHCP services."
+      ]
     },
     {
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8rn_clOvaBhnKD0tUcec3xN3P6oNPw9xa_w&s",
       "company": "PT. Arga Kirana Utama",
       "position": "IT Staff",
-      "period": "February 2023 - December 2022",
+      "period": "February 2022 - December 2022",
       "responsibilities": [
         "Developed web-based Inventory System.",
         "Create a web-based company profile."
